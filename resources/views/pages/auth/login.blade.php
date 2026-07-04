@@ -1,4 +1,4 @@
-<<x-layouts::auth :title="__('Log in')">
+<<x-layouts::auth :title="__('Login')">
 
 <div class="space-y-6">
 
