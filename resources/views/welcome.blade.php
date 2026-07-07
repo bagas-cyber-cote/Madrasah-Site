@@ -21,11 +21,8 @@
         <div class="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-emerald-700/20 blur-3xl"></div>
 
         <div class="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-yellow-500/10 blur-3xl"></div>
-
         <div class="relative z-10 mx-auto max-w-7xl px-6">
-
             <div class="grid items-center gap-16 lg:grid-cols-2">
-
                 {{-- Left --}}
                 <div>
 
@@ -86,16 +83,15 @@
                             src="{{ asset('images/yayasan.jpg') }}"
                             alt="Logo Sekolah"
                             class="h-96 w-96 rounded-full object-cover border-4 border-emerald-950 shadow-2x1" />
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
+    <!-- section untuk prestasi sekolah -->
+    <!-- section untuk profile -->
+    <!-- section untuk berita dan footer -->
+
 
 </body>
 
