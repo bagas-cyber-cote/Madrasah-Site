@@ -58,7 +58,7 @@ new class extends Component
                         <div class="h-10 w-1 rounded-full bg-yellow-500"></div>
                         <h2 class="text-3xl font-bold text-white">
                             Informasi Yayasan
-                </h2>
+                        </h2>
                     </div>
                     <div class="mt-10 space-y-8">
                         <div
