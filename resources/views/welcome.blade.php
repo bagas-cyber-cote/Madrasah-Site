@@ -263,6 +263,78 @@
 
 </section>
     <!-- section untuk prestasi sekolah -->
+    {{-- ========================================================= --}}
+{{-- PRESTASI SEKOLAH --}}
+{{-- ========================================================= --}}
+
+<section id="prestasi" class="relative overflow-hidden bg-[#0f1115] py-32">
+
+    {{-- Background Blur --}}
+    <div class="absolute -left-32 top-20 h-96 w-96 rounded-full bg-emerald-700/20 blur-3xl"></div>
+    <div class="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-yellow-500/10 blur-3xl"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6">
+
+        {{-- Heading --}}
+        <div class="mb-20 text-center">
+
+            <span class="rounded-full border border-emerald-400/30 bg-emerald-500/20 px-5 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-emerald-300">
+                Prestasi Sekolah
+            </span>
+
+            <h2 class="mt-8 text-5xl font-black">
+                Prestasi Membanggakan Kami
+            </h2>
+
+            <p class="mx-auto mt-6 max-w-3xl text-lg leading-8 text-zinc-300">
+                Berbagai prestasi yang telah diraih oleh siswa dan sekolah dalam berbagai bidang akademik maupun non-akademik.
+            </p>
+
+        </div>
+
+        {{-- Grid Prestasi --}}
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+
+            @for ($i = 1; $i <= 5; $i++)
+
+                <div class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-emerald-500 hover:shadow-[0_0_30px_rgba(16,185,129,0.35)]">
+
+                    {{-- Foto --}}
+                    <div class="overflow-hidden">
+
+                        <img
+                            src="{{ asset('images/prestasi/piala'.$i.'.jpg') }}"
+                            alt="Prestasi {{ $i }}"
+                            class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+
+                    </div>
+
+                    {{-- Informasi --}}
+                    <div class="p-6 text-center">
+
+                        <h3 class="text-xl font-bold text-white">
+                            🏆 Juara {{ $i }}
+                        </h3>
+
+                        <p class="mt-2 text-sm text-emerald-300">
+                            Tingkat Kabupaten
+                        </p>
+
+                        <p class="mt-2 text-sm text-zinc-400">
+                            Tahun 2026
+                        </p>
+
+                    </div>
+
+                </div>
+
+            @endfor
+
+        </div>
+
+    </div>
+
+</section>
     <!-- section untuk berita dan footer -->
 
 
