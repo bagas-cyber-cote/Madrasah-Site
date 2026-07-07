@@ -247,7 +247,7 @@
                             menghasilkan lulusan yang berkualitas.
                             Di bawah kepemimpinannya, yayasan terus
                             melakukan pengembangan dalam bidang akademik,
-                            teknologi, dan pembangunan fasilitas sekolah.
+                            teknologia, dan pembangunan fasilitas sekolah.
 
                         </p>
 
