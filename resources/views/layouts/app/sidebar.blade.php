@@ -18,6 +18,9 @@
                     <flux:sidebar.item icon="building-office" :href="route('profil-sekolah.index')" :current="request()->routeIs('profil-sekolah.index')" wire:navigate>
                         {{ __('Profil Sekolah') }}
                     </flux:sidebar.item>
+                    <flux:sidebar.item icon="building-office" :href="route('bio_data.index')" :current="request()->routeIs('bio_data.index')" wire:navigate>
+                        {{ __('Bio Data Siswa') }}
+                    </flux:sidebar.item>
                 </flux:sidebar.group>
             </flux:sidebar.nav>
 

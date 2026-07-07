@@ -8,6 +8,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
     Route::livewire('profil_sekolah', 'pages::profil_sekolah.index')
 ->name('profil-sekolah.index');
+    Route::livewire('bio_data', 'pages::bio_data.index')
+->name('bio_data.index');
     
 });
 
