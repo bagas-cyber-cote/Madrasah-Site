@@ -33,51 +33,32 @@
             {{-- Title --}}
             <div class="mt-6 text-center">
 
-                <h1 class="text-3xl font-bold text-white">
-
-                    Sistem Informasi Sekolah
-
+                <h1 class="text-3xl font-bold text-yellow-500 text-justify-center">
+                    PENGELOLAAN DATA SISWA DAN GURU YPSH-NWDI
                 </h1>
-
                 <p class="mt-2 text-zinc-400">
-
                     Silakan login untuk melanjutkan
-
                 </p>
-
             </div>
-
             {{-- Content --}}
             <div class="mt-8">
-
                 {{ $slot }}
-
             </div>
-
         </div>
-
     </div>
-
     <style>
-
         @keyframes fadeIn{
-
             from{
                 opacity:0;
                 transform:translateY(30px);
             }
-
             to{
                 opacity:1;
                 transform:translateY(0);
             }
-
         }
-
     </style>
-
     @fluxScripts
-
 </body>
 
 </html>
