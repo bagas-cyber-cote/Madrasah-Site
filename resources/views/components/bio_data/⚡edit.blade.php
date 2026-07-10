@@ -1,42 +1,51 @@
 <?php
 
 use Livewire\Component;
+use App\Models\bio_data;
 use App\Livewire\Forms\bio_dataForm;
 
 new class extends Component
 {
     public bio_dataForm $form;
 
-    public function save()
+    public bio_data $bio_data;
+
+    public function mount(bio_data $bio_data)
     {
-        $this->form->store();
-         Flux::modal('Add Bio Data')->close();
+        $this->bio_data = $bio_data;
+        $this->form->setBioData($bio_data);
+        
+    }
 
-        session()->flash('success', 'Bio Data berhasil ditambahkan.');
+    public function update()
+    {
+        $this->form->update();
 
-        $this->dispatch('bio-data-created');
+         Flux::modal('edit-bio-data')->close();
+
+        $this->dispatch('bio-data-updated');
+
+        session()->flash('success', 'Bio Data berhasil diupdate.');
     }
 };
 
 ?>
 
-<flux:modal name="Add Bio Data" class="md:w-96">
+<flux:modal name="edit-bio-data" class="md:w-96">
 
-    <form wire:submit="save" class="space-y-6">
+    <form wire:submit="update" class="space-y-6">
 
         <div>
-            <flux:heading size="lg">Bio Data Siswa</flux:heading>
-            <flux:text class="mt-2">
-                Tambahkan Bio Data Anda
+           <flux:heading class="text-center font-extrabold" size="xl">Ubah Bio Data Anda</flux:heading>
+            <flux:text class="mt-2 text-center">
+                Ubah Bio Data Anda.
             </flux:text>
         </div>
 
         <flux:input
             label="Nama"
-            placeholder="Nama Lengkap Siswa"
             wire:model="form.nama"
         />
-
         <flux:input
             label="Tanggal Lahir"
             type="date"
@@ -59,19 +68,16 @@ new class extends Component
 
         <flux:input
             label="Asal Sekolah"
-            placeholder="Asal Sekolah Sebelumnya"
             wire:model="form.asal_sekolah"
         />
 
         <div class="flex">
             <flux:spacer />
 
-            <flux:button
-                type="submit"
-                variant="primary"
-            >
-                Simpan Bio Data anda
+            <flux:button type="submit" variant="primary">
+                Simpan Perubahan
             </flux:button>
+
         </div>
 
     </form>

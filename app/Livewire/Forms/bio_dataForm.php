@@ -4,6 +4,7 @@ namespace App\Livewire\Forms;
 
 use Livewire\Form;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 use App\Models\bio_data;
 
 class bio_dataForm extends Form
@@ -65,15 +66,20 @@ class bio_dataForm extends Form
     {
         $this->validate();
 
-        bio_data::create(
-            $this->only([
-                'nama',
-                'tanggal_lahir',
-                'jenis_kelamin',
-                'alamat',
-                'asal_sekolah',
-            ])
-        );
+        // Cek apakah user sudah memiliki biodata
+        if (bio_data::where('user_id', Auth::id())->exists()) {
+            session()->flash('error', 'Anda sudah memiliki biodata.');
+            return;
+        }
+
+        bio_data::create([
+            'user_id' => Auth::id(),
+            'nama' => $this->nama,
+            'tanggal_lahir' => $this->tanggal_lahir,
+            'jenis_kelamin' => $this->jenis_kelamin,
+            'alamat' => $this->alamat,
+            'asal_sekolah' => $this->asal_sekolah,
+        ]);
 
         $this->reset();
     }
@@ -82,15 +88,17 @@ class bio_dataForm extends Form
     {
         $this->validate();
 
-        $this->bio_data->update(
-            $this->only([
-                'nama',
-                'tanggal_lahir',
-                'jenis_kelamin',
-                'alamat',
-                'asal_sekolah',
-            ])
-        );
+        if (!$this->bio_data) {
+            return;
+        }
+
+        $this->bio_data->update([
+            'nama' => $this->nama,
+            'tanggal_lahir' => $this->tanggal_lahir,
+            'jenis_kelamin' => $this->jenis_kelamin,
+            'alamat' => $this->alamat,
+            'asal_sekolah' => $this->asal_sekolah,
+        ]);
 
         $this->reset();
     }
