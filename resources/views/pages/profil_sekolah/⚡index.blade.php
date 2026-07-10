@@ -102,7 +102,7 @@ new class extends Component
                             Kepala Yayasan
                         </h3>
                         <p class="mt-3 text-center text-lg text-zinc-300">
-                            {{ $profil?->kepala_sekolah ?? 'Bapak Dr.Tuan Guru. H. Najmul Akyar, SH., MH' }}
+                            {{ $profil?->kepala_sekolah ?? 'Dr. Tuan Guru. H. Najmul AKhar, S.H,. M.H' }}
                         </p>
                     </div>
                     <div class="my-8 border-t border-zinc-800"></div>

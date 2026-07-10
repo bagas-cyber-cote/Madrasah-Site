@@ -67,7 +67,7 @@
     
     <section
         id="profil"
-        class="relative overflow-hidden bg-[#0f1115] py-32">
+        class="relative overflow-hidden bg-[#0f150f] py-32">
         {{-- Background Blur --}}
         <div class="absolute left-0 top-20 h-80 w-80 rounded-full bg-emerald-700/20 blur-3xl"></div>
         <div class="absolute right-0 bottom-0 h-80 w-80 rounded-full bg-yellow-500/10 blur-3xl"></div>
@@ -173,7 +173,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- section untuk prestasi sekolah -->
     <section id="prestasi" class="relative overflow-hidden bg-[#0f1115] py-32">
     <!-- Background Blur -->
@@ -198,15 +198,15 @@
                     <!-- Box1 -->
                     <div class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-emerald-500 hover:shadow-[0_0_30px_rgba(16,185,129,0.35)]">
                         <div class="overflow-hidden">
-                            <img src="{{ asset('images/yayasan.jpg') }}"
+                            <img src="{{ asset('images/Jauara1_Atletik.jpg') }}"
                                 class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
                             <div class="p-6 text-center">
-                                <h3 class="text-xl font-bold text-white">🏆 Prestasi</h3>
+                                <h3 class="text-xl font-bold text-white">Juara 1 Cabang Atletik Putra</h3>
                                 <p class="mt-2 text-sm text-emerald-300">
-                                    Tingkat Kabupaten
+                                    Tingkat Kabupaten Lombok Utara
                                 </p>
                                 <p class="mt-2 text-sm text-zinc-400">
-                                    Tahun 2026
+                                    Tahun 2015
                                 </p>
                             </div>
                         </div>
@@ -214,15 +214,15 @@
                     <!-- Box2 -->
                     <div class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-emerald-500 hover:shadow-[0_0_30px_rgba(16,185,129,0.35)]">
                         <div class="overflow-hidden">
-                            <img src="{{ asset('images/yayasan.jpg') }}"
+                            <img src="{{ asset('images/Juara1_GerakJalanPutri.jpg') }}"
                                 class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
                             <div class="p-6 text-center">
-                                <h3 class="text-xl font-bold text-white">🏆 Prestasi</h3>
+                                <h3 class="text-xl font-bold text-white">Juara 1 Gerak Jalan Putri</h3>
                                 <p class="mt-2 text-sm text-emerald-300">
-                                    Tingkat Kabupaten
+                                    Tingkat Kabupaten Lombok Utara
                                 </p>
                                 <p class="mt-2 text-sm text-zinc-400">
-                                    Tahun 2026
+                                    Tahun 2015
                                 </p>
                             </div>
                         </div>
@@ -230,15 +230,15 @@
                     <!-- Box3 -->
                     <div class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-emerald-500 hover:shadow-[0_0_30px_rgba(16,185,129,0.35)]">
                         <div class="overflow-hidden">
-                            <img src="{{ asset('images/yayasan.jpg') }}"
+                            <img src="{{ asset('images/Juara1Putri_Pidato_3Bahasa.jpg') }}"
                                 class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
                             <div class="p-6 text-center">
-                                <h3 class="text-xl font-bold text-white">🏆 Prestasi</h3>
+                                <h3 class="text-xl font-bold text-white">Juara 1 Putri Pidato Bahasa Inggris</h3>
                                 <p class="mt-2 text-sm text-emerald-300">
-                                    Tingkat Kabupaten
+                                    Tingkat Kabupaten Lombok Utara
                                 </p>
                                 <p class="mt-2 text-sm text-zinc-400">
-                                    Tahun 2026
+                                    Tahun 2015
                                 </p>
                             </div>
                         </div>
@@ -246,15 +246,15 @@
                     <!-- Box4 -->
                     <div class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-emerald-500 hover:shadow-[0_0_30px_rgba(16,185,129,0.35)]">
                         <div class="overflow-hidden">
-                            <img src="{{ asset('images/yayasan.jpg') }}"
+                            <img src="{{ asset('images/Juara2_Kaligrafi.jpg') }}"
                                 class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
                             <div class="p-6 text-center">
-                                <h3 class="text-xl font-bold text-white">🏆 Prestasi</h3>
+                                <h3 class="text-xl font-bold text-white">Juara 2 Kaligrafi MA Putra</h3>
                                 <p class="mt-2 text-sm text-emerald-300">
-                                    Tingkat Kabupaten
+                                    Tingkat Kecamatan Pemenang
                                 </p>
                                 <p class="mt-2 text-sm text-zinc-400">
-                                    Tahun 2026
+                                    Tahun 2015
                                 </p>
                             </div>
                         </div>
@@ -262,15 +262,15 @@
                     <!-- Box5 -->
                     <div class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-emerald-500 hover:shadow-[0_0_30px_rgba(16,185,129,0.35)]">
                         <div class="overflow-hidden">
-                            <img src="{{ asset('images/yayasan.jpg') }}"
+                            <img src="{{ asset('images/Juara2_SeniPidato_3Bahasa.jpg') }}"
                                 class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
                             <div class="p-6 text-center">
-                                <h3 class="text-xl font-bold text-white">🏆 Prestasi</h3>
+                                <h3 class="text-xl font-bold text-white">Juara 2 Cabang Seni Pidato 3 Bahasa (Inggris Putri) </h3>
                                 <p class="mt-2 text-sm text-emerald-300">
-                                    Tingkat Kabupaten
+                                    Tingkat Kabupaten Lombok Utara
                                 </p>
                                 <p class="mt-2 text-sm text-zinc-400">
-                                    Tahun 2026
+                                    Tahun 2016
                                 </p>
                             </div>
                         </div>
@@ -278,15 +278,15 @@
                     <!-- Box6 -->
                     <div class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-emerald-500 hover:shadow-[0_0_30px_rgba(16,185,129,0.35)]">
                         <div class="overflow-hidden">
-                            <img src="{{ asset('images/yayasan.jpg') }}"
+                            <img src="{{ asset('images/Juara2_Tahfidz.jpg') }}"
                                 class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
                             <div class="p-6 text-center">
-                                <h3 class="text-xl font-bold text-white">🏆 Prestasi</h3>
+                                <h3 class="text-xl font-bold text-white">Juara 2 Tahfidz</h3>
                                 <p class="mt-2 text-sm text-emerald-300">
                                     Tingkat Kabupaten
                                 </p>
                                 <p class="mt-2 text-sm text-zinc-400">
-                                    Tahun 2026
+                                    Tahun 2004
                                 </p>
                             </div>
                         </div>
@@ -294,15 +294,15 @@
                     <!-- Box7 -->
                     <div class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-emerald-500 hover:shadow-[0_0_30px_rgba(16,185,129,0.35)]">
                         <div class="overflow-hidden">
-                            <img src="{{ asset('images/yayasan.jpg') }}"
+                            <img src="{{ asset('images/JuaraHarapan_DutaBaca.jpg') }}"
                                 class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
                             <div class="p-6 text-center">
-                                <h3 class="text-xl font-bold text-white">🏆 Prestasi</h3>
+                                <h3 class="text-xl font-bold text-white">Juara Harapan Lomba Duta Baca</h3>
                                 <p class="mt-2 text-sm text-emerald-300">
-                                    Tingkat Kabupaten
+                                    Tingkat Kabupaten Lombok Utara
                                 </p>
                                 <p class="mt-2 text-sm text-zinc-400">
-                                    Tahun 2026
+                                    Tahun 2018
                                 </p>
                             </div>
                         </div>
@@ -310,15 +310,15 @@
                     <!-- Box8 -->
                     <div class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-emerald-500 hover:shadow-[0_0_30px_rgba(16,185,129,0.35)]">
                         <div class="overflow-hidden">
-                            <img src="{{ asset('images/yayasan.jpg') }}"
+                            <img src="{{ asset('images/SebagaiKoperasiBerprestasi.jpg') }}"
                                 class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
                             <div class="p-6 text-center">
-                                <h3 class="text-xl font-bold text-white">🏆 Prestasi</h3>
+                                <h3 class="text-xl font-bold text-white">Sebagai Koperasi Berprestasi</h3>
                                 <p class="mt-2 text-sm text-emerald-300">
-                                    Tingkat Kabupaten
+                                    Tingkat Kecamatang Pemenang
                                 </p>
                                 <p class="mt-2 text-sm text-zinc-400">
-                                    Tahun 2026
+                                    Tahun 2010
                                 </p>
                             </div>
                         </div>
