@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('data__gurus', function (Blueprint $table) {
             $table->id();
+            $table->int('date')->nullable();
             $table->timestamps();
         });
     }

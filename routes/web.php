@@ -10,7 +10,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 ->name('profil-sekolah.index');
     Route::livewire('bio_data', 'pages::bio_data.index')
 ->name('bio_data.index');
-    
+    Route::livewire('data_guru', 'pages:data_guru.index')
+->name('data_guru.index');
 });
 
 
