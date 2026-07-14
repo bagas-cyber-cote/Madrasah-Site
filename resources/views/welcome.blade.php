@@ -127,10 +127,10 @@
                 </span>
                 <h2 class="mt-8 text-5xl font-black leading-tight text-[#F3EDE3] xl:text-6xl">
                     Sejarah Singkat <br>
-                    <span class="text-[#E4DBC4]">Profil Sekolah</span>
+                    <span class="text-[#E4DBC4]">Yayasan</span>
                 </h2>
                 <p class="mt-8 text-lg leading-9 text-[#E4DBC4]/85 text-justify">
-                    Yayasan Pendidikan Hamzanwadi NWDI Menggala berdiri dengan tujuan menghadirkan pendidikan yang berkualitas, berkarakter, dan berlandaskan nilai-nilai keislaman.
+                    Yayasan Pendidikan dan Sosial Hidayaturrahman NWDI Menggala, Yang berdiri sejak 1986 telah memberikan banyak sekali kontribusi bagi pendidikan di desa menggala salah satunya melahirkan para hafidz Al-Qur'an, Melahirkan para santri santriwati yang berkualitas bertaraf nasional.
                 </p>
                 
                 <!-- BOX PEMIMPIN (Tetap Berbingkai & Foto Bulat Sempurna) -->
@@ -144,9 +144,9 @@
                         
                         <div class="text-center sm:text-left">
                             <span class="inline-block text-xs font-bold uppercase tracking-widest text-[#E4DBC4]/70 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
-                                Pemimpin Saat Ini
+                                Ketua yayasan Saat Ini
                             </span>
-                            <h3 class="mt-3 text-2xl font-black text-[#F3EDE3]">Dr. H. Ahmad Fulan, M.Pd.</h3>
+                            <h3 class="mt-3 text-2xl font-black text-[#F3EDE3]">Dr. TGH. Najmul Akhyar, S.H,. M.H</h3>
                             <p class="mt-2 text-sm leading-7 text-[#E4DBC4]/80 text-justify">Memimpin pengembangan yayasan menuju era transformasi pendidikan modern digital.</p>
                         </div>
                     </div>
