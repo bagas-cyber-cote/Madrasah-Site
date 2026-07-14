@@ -12,15 +12,36 @@
 
             <flux:sidebar.nav>
                 <flux:sidebar.group :heading="__('Platform')" class="grid">
+                    @if(auth()->check() && (auth()->user()->role == 'Admin' || auth()->user()->role == 'Siswa'))
                     <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </flux:sidebar.item>
+@endif
                     <flux:sidebar.item icon="building-office" :href="route('profil-sekolah.index')" :current="request()->routeIs('profil-sekolah.index')" wire:navigate>
                         {{ __('Profil Sekolah') }}
                     </flux:sidebar.item>
+                    @if(auth()->check() && (auth()->user()->role == 'Admin' || auth()->user()->role == 'Siswa'))
                     <flux:sidebar.item icon="building-office" :href="route('bio_data.index')" :current="request()->routeIs('bio_data.index')" wire:navigate>
                         {{ __('Bio Data Siswa') }}
                     </flux:sidebar.item>
+@endif
+                    @if(auth()->check() && auth()->user()->role == 'Admin')
+                    <flux:sidebar.item
+                    icon="home"
+                    :href="route('dashboard.userr')"
+                    :current="request()->routeIs('dashboard.userr')"
+                     wire:navigate>
+                     {{ __('Dashboard Admin') }}
+                    </flux:sidebar.item>
+
+                    <flux:sidebar.item
+                    icon="building-office"
+                    :href="route('userr.index')"
+                    :current="request()->routeIs('userr.index')"
+                    wire:navigate >
+                      {{ __('Kelola User') }}
+                    </flux:sidebar.item>
+@endif
                 </flux:sidebar.group>
             </flux:sidebar.nav>
 
