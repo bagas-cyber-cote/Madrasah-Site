@@ -20,7 +20,7 @@
                     <flux:sidebar.item icon="building-office" :href="route('profil-sekolah.index')" :current="request()->routeIs('profil-sekolah.index')" wire:navigate>
                         {{ __('Profil Sekolah') }}
                     </flux:sidebar.item>
-                    @if(auth()->check() && (auth()->user()->role == 'Admin' || auth()->user()->role == 'Siswa'))
+                     @if(auth()->check() && auth()->user()->role == 'siswa' || auth()->user()->role == 'Admin')
                     <flux:sidebar.item icon="building-office" :href="route('bio_data.index')" :current="request()->routeIs('bio_data.index')" wire:navigate>
                         {{ __('Bio Data Siswa') }}
                     </flux:sidebar.item>

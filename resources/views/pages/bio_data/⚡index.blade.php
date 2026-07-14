@@ -147,7 +147,7 @@ new class extends Component
             </div>
 
             @if($bio)
-                <div class="flex justify-center mt-4">
+                <div class="aura aura-rainbow flex justify-center mt-4">
                     <flux:modal.trigger name="edit-bio-data">
                         <flux:button variant="primary">
                             Edit Bio Data
