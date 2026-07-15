@@ -102,6 +102,8 @@
     </div>
 </section>
 
+<!-- Berita Section -->
+
 <!-- SEJARAH SECTION -->
 <section id="sejarah" class="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-[#12271C] via-[#102017] to-[#0E1812]">
     <div class="absolute -top-40 left-1/4 h-[500px] w-[500px] rounded-full bg-[#45644A]/20 blur-[160px]"></div>
@@ -306,16 +308,16 @@
             <div>
                 <h4 class="text-sm font-bold uppercase tracking-[0.2em] text-[#F3EDE3] mb-6">Hubungi Kami</h4>
                 <ul class="space-y-4 text-sm text-[#E4DBC4]/80">
-                    <li class="flex items-center gap-3"><span>📞</span> +62 812-3456-7890</li>
-                    <li class="flex items-center gap-3"><span>✉️</span> info@ypshnwdimenggala.sch.id</li>
+                    <li class="flex items-center gap-3"><span>📞</span> +62 853-3749-1415</li>
+                    <li class="flex items-center gap-3"><span>✉️</span> hidayaturrahmannwdi@gmail.com</li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-sm font-bold uppercase tracking-[0.2em] text-[#F3EDE3] mb-6">Alamat Lengkap</h4>
                 <p class="text-sm leading-7 text-[#E4DBC4]/80">
-                    Jl. Pendidikan No. 45, Kecamatan Menggala,<br>
-                    Kabupaten Tulang Bawang, Provinsi Lampung,<br>
-                    Kode Pos 34611.
+                    Jl. H. Mansur, Desa Menggala,<br>
+                    Kabupaten Lombok Utara, Provinsi NTB,<br>
+                    Kode Pos 83352.
                 </p>
             </div>
         </div>
