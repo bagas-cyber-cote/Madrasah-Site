@@ -14,8 +14,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 ->name('data_guru.index');
      Route::livewire('userr', 'pages::userr.index')
 ->name('userr.index');
-    Route::livewire('dashboard-userr', 'pages::userr.dashboard')
-->name('dashboard.userr');
+
 });
 
 

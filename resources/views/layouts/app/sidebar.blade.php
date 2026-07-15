@@ -12,7 +12,7 @@
 
             <flux:sidebar.nav>
                 <flux:sidebar.group :heading="__('Platform')" class="grid">
-                    @if(auth()->check() && (auth()->user()->role == 'Admin' || auth()->user()->role == 'Siswa'))
+                    @if(auth()->check() && (auth()->user()->role == 'Admin' || auth()->user()->role == 'siswa'))
                     <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </flux:sidebar.item>
@@ -26,14 +26,6 @@
                     </flux:sidebar.item>
 @endif
                     @if(auth()->check() && auth()->user()->role == 'Admin')
-                    <flux:sidebar.item
-                    icon="home"
-                    :href="route('dashboard.userr')"
-                    :current="request()->routeIs('dashboard.userr')"
-                     wire:navigate>
-                     {{ __('Dashboard Admin') }}
-                    </flux:sidebar.item>
-
                     <flux:sidebar.item
                     icon="building-office"
                     :href="route('userr.index')"
