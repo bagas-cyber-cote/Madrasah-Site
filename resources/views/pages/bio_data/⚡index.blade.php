@@ -115,6 +115,20 @@ new class extends Component
         <!-- Card Utama: Warna disamakan dengan foto (gelap, tanpa border putih, menggunakan border abu-abu sangat tipis & gelap) -->
         <div class="space-y-4 rounded-2xl border border-white/5 bg-white/[0.03] backdrop-blur-md p-6 w-full max-w-2xl shadow-2xl text-white">
 
+            <div class="flex justify-center">
+                @if($bio?->foto)
+                    <img
+                        src="{{ asset('storage/' . $bio->foto) }}"
+                        alt="Foto Profil"
+                        class="h-24 w-24 rounded-full object-cover border-2 border-white/20 shadow-lg"
+                    >
+                @else
+                    <div class="flex h-24 w-24 items-center justify-center rounded-full border-2 border-dashed border-white/20 bg-white/10 text-sm text-white/70">
+                        No Foto
+                    </div>
+                @endif
+            </div>
+
             <div>
                 <flux:heading size="sm" class="text-white/70 mb-1">Nama</flux:heading>
                 <div class="border border-white/5 rounded-lg p-3 bg-black/20 text-white/90">
