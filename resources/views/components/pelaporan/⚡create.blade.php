@@ -45,7 +45,10 @@ new class extends Component
             label="Nama Pengajar"
             wire:model="form.nama_pengajar"
         />
-
+        <flux:input
+            label="Kelas"
+            wire:model="form.kelas"
+        />
         <flux:input
             label="Mata Pelajaran"
             wire:model="form.mata_pelajaran"

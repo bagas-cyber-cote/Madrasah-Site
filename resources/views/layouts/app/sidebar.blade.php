@@ -101,7 +101,6 @@
                 <flux:sidebar.nav class="mt-6">
                     <flux:sidebar.group :heading="__('Platform')" class="grid text-emerald-500/70 font-semibold tracking-wider text-xs uppercase">
                         
-                        @if(auth()->check() && (auth()->user()->role == 'Admin' || auth()->user()->role == 'siswa'))
                             <flux:sidebar.item 
                                 icon="home" 
                                 :href="route('dashboard')" 
@@ -111,7 +110,6 @@
                             >
                                 {{ __('Dashboard') }}
                             </flux:sidebar.item>
-                        @endif
 
                         <flux:sidebar.item 
                             icon="building-office" 
@@ -146,6 +144,8 @@
                                 {{ __('Kelola User') }}
                             </flux:sidebar.item>
                         @endif
+
+                            @if(auth()->check() && auth()->user()->role == 'Guru')
                             <flux:sidebar.item 
                                 icon="home" 
                                 :href="route('pelaporan.index')" 
@@ -155,6 +155,19 @@
                                 >
                                     {{__('Pelaporan Pengajar')}}
                             </flux:sidebar.item>
+                        @endif
+
+                             @if(auth()->check() && auth()->user()->role == 'Admin')
+                             <flux:sidebar.item 
+                                icon="home" 
+                                :href="route('kelola_laporan.index')" 
+                                :current="request()->routeIs('kelola_laporan.index')" 
+                                wire:navigate
+                                class="liquid-click-effect hover:!bg-emerald-500/10 hover:!text-emerald-300 data-[current]:!bg-emerald-500/15 data-[current]:!text-emerald-400 data-[current]:!border-s-2 data-[current]:!border-emerald-400 rounded-xl transition-all duration-200"
+                                >
+                                    {{__('Kelola Laporan')}}
+                            </flux:sidebar.item>
+                        @endif
                     </flux:sidebar.group>
                 </flux:sidebar.nav>
 

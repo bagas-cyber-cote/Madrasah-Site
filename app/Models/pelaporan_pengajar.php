@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class pelaporan_pengajar extends Model
 {
-    protected $fillable = [
-        'nama_pengajar',
-        'mata_pelajaran',
-        'materi',
-        'tanggal',
-        'foto_bukti',
-    ];
+   protected $fillable = [
+    'user_id',
+    'nama_pengajar',
+    'mata_pelajaran',
+    'kelas',
+    'materi',
+    'tanggal',
+    'foto_bukti',
+];
 }

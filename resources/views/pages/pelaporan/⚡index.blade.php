@@ -3,10 +3,22 @@
 use Livewire\Component;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\On;
+use Illuminate\Support\Facades\Auth;
 use App\Models\pelaporan_pengajar;
 
 new class extends Component
 {
+    public function mount()
+    {
+        if (!Auth::check()) {
+            return redirect('/login');
+        }
+
+        if (Auth::user()->role !== 'Guru') {
+            abort(403, 'Halaman ini hanya dapat diakses oleh Guru.');
+        }
+    }
+
     #[On('pelaporan-created')]
     #[On('pelaporan-deleted')]
     public function refresh()
@@ -17,7 +29,9 @@ new class extends Component
     #[Computed]
     public function pelaporan()
     {
-        return pelaporan_pengajar::latest()->get();
+        return pelaporan_pengajar::where('user_id', Auth::id())
+            ->orderBy('created_at', 'desc')
+            ->get();
     }
 };
 
@@ -34,11 +48,12 @@ new class extends Component
     </div>
 
     <livewire:pelaporan.create />
-    
+
     <flux:table>
 
         <flux:table.columns>
             <flux:table.column>No</flux:table.column>
+            <flux:table.column>Kelas</flux:table.column>
             <flux:table.column>Mata Pelajaran</flux:table.column>
             <flux:table.column>Aksi</flux:table.column>
         </flux:table.columns>
@@ -51,6 +66,10 @@ new class extends Component
 
                     <flux:table.cell>
                         {{ $loop->iteration }}
+                    </flux:table.cell>
+
+                    <flux:table.cell>
+                        {{ $item->kelas }}
                     </flux:table.cell>
 
                     <flux:table.cell>
@@ -89,7 +108,7 @@ new class extends Component
 
                 <flux:table.row>
 
-                    <flux:table.cell colspan="3">
+                    <flux:table.cell colspan="4">
                         Belum ada data pelaporan.
                     </flux:table.cell>
 
@@ -103,7 +122,6 @@ new class extends Component
 
     @foreach($this->pelaporan as $item)
 
-        {{-- Modal Detail --}}
         <flux:modal
             name="detail-{{ $item->id }}"
             class="md:w-2xl"
@@ -120,6 +138,14 @@ new class extends Component
 
                     <div class="mt-1 rounded-lg border p-2">
                         {{ $item->nama_pengajar }}
+                    </div>
+                </div>
+
+                <div>
+                    <strong>Kelas</strong>
+
+                    <div class="mt-1 rounded-lg border p-2">
+                        {{ $item->kelas }}
                     </div>
                 </div>
 
@@ -154,7 +180,7 @@ new class extends Component
                     @if($item->foto_bukti)
 
                         <img
-                            src="{{ asset('storage/'.$item->foto_bukti) }}"
+                            src="{{ asset('storage/' . $item->foto_bukti) }}"
                             class="mt-2 w-full max-w-md rounded-lg border object-cover"
                         >
 

@@ -16,6 +16,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 ->name('userr.index');
     Route::livewire('pelaporan', 'pages::pelaporan.index')
 ->name('pelaporan.index');
+    Route::livewire('kelola_laporan', 'pages::admin.index')
+->name('kelola_laporan.index');
 });
 
 
