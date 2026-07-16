@@ -38,7 +38,7 @@ new class extends Component
 
     {{-- Tombol Tambah Biodata hanya untuk siswa --}}
     @if(Auth::user()->role === 'siswa' && $biodatas->isEmpty())
-        <div class="w-full max-w-2xl flex justify-end">
+        <div class="w-full max-w-sm flex justify-end">
             <flux:modal.trigger name="Add Bio Data">
                 <flux:button>Add Bio Data</flux:button>
             </flux:modal.trigger>
@@ -53,8 +53,8 @@ new class extends Component
         {{-- Tampilan Admin --}}
         @forelse($biodatas as $bio)
 
-            <!-- Card Utama: Warna disamakan dengan foto (gelap, tanpa border putih, menggunakan border abu-abu sangat tipis & gelap) -->
-            <div class="space-y-4 rounded-2xl border border-white/5 bg-white/[0.03] backdrop-blur-md p-6 w-full max-w-2xl shadow-2xl mb-6 text-white">
+            <!-- Card Utama Admin: Sangat Ramping (max-w-sm), Liquid Glass -->
+            <div class="space-y-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 w-full max-w-sm shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] mb-6 text-white">
 
                 <div>
                     <flux:heading size="sm" class="text-white/70 mb-1">Nama</flux:heading>
@@ -112,18 +112,19 @@ new class extends Component
 
         @endif
 
-        <!-- Card Utama: Warna disamakan dengan foto (gelap, tanpa border putih, menggunakan border abu-abu sangat tipis & gelap) -->
-        <div class="space-y-4 rounded-2xl border border-white/5 bg-white/[0.03] backdrop-blur-md p-6 w-full max-w-2xl shadow-2xl text-white">
+        <!-- Card Utama Siswa: Sangat Ramping (max-w-sm), Liquid Glass -->
+        <div class="space-y-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 w-full max-w-sm shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] text-white">
 
-            <div class="flex justify-center">
+            {{-- Lingkaran Foto Profil Ukuran Medium & Bulat Sempurna (h-32 w-32) --}}
+            <div class="flex justify-center mb-6">
                 @if($bio?->foto)
                     <img
                         src="{{ asset('storage/' . $bio->foto) }}"
                         alt="Foto Profil"
-                        class="h-24 w-24 rounded-full object-cover border-2 border-white/20 shadow-lg"
+                        class="h-32 w-32 rounded-full object-cover border-2 border-white/20 shadow-lg flex-shrink-0 aspect-square"
                     >
                 @else
-                    <div class="flex h-24 w-24 items-center justify-center rounded-full border-2 border-dashed border-white/20 bg-white/10 text-sm text-white/70">
+                    <div class="flex h-32 w-32 items-center justify-center rounded-full border border-dashed border-white/20 bg-white/10 text-sm text-white/70 flex-shrink-0 aspect-square">
                         No Foto
                     </div>
                 @endif
@@ -167,7 +168,7 @@ new class extends Component
             @if($bio)
                 <div class="flex justify-center mt-6">
                     <flux:modal.trigger name="edit-bio-data">
-                        <flux:button variant="primary" class="shadow-lg">
+                        <flux:button variant="primary" class="shadow-lg w-full">
                             Edit Bio Data
                         </flux:button>
                     </flux:modal.trigger>

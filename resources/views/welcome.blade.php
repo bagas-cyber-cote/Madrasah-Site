@@ -441,13 +441,42 @@
 <footer id="kontak" class="relative overflow-hidden bg-gradient-to-b from-[#0A110D] to-[#060A08]">
     <div class="absolute left-1/2 bottom-0 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-[#45644A]/10 blur-[150px] pointer-events-none"></div>
     <div class="relative z-10 mx-auto max-w-7xl px-8 py-20">
-        <div class="grid gap-16 md:grid-cols-2 lg:grid-cols-4">
+        <div class="grid gap-16 md:grid-cols-2 lg:grid-cols-5"> <!-- Mengubah grid ke col-5 agar muat sejajar dengan proporsional -->
+            
+            {{-- Bagian Branding --}}
             <div class="lg:col-span-2">
                 <h2 class="text-3xl font-black tracking-wider text-[#F3EDE3]">YPSH NWDI <span class="text-[#E4DBC4]">Menggala</span></h2>
                 <p class="mt-4 max-w-sm text-sm leading-7 text-[#E4DBC4]/70">
                     Membangun integritas moral, kecerdasan intelektual, dan keteguhan spiritual menuju masa depan gemilang.
                 </p>
             </div>
+
+            {{-- Tambahan Bagian Media Sosial di sebelah kiri Hubungi Kami --}}
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-[0.2em] text-[#F3EDE3] mb-6">Media Sosial</h4>
+                <ul class="space-y-4 text-sm text-[#E4DBC4]/80">
+                    <li>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 transition-colors hover:text-[#F3EDE3]">
+                            <!-- Icon Facebook SVG -->
+                            <svg class="h-5 w-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Hidayaturrahman NWDI</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 transition-colors hover:text-[#F3EDE3]">
+                            <!-- Icon Instagram SVG -->
+                            <svg class="h-5 w-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.01 3.752.054 2.647.121 3.962 1.425 4.083 4.083.044.968.054 1.32.054 3.752 0 2.43-.01 2.784-.054 3.752-.121 2.647-1.425 3.962-4.083 4.083-.968.044-1.32.054-3.752.054-2.43 0-2.784-.01-3.752-.054-2.647-.121-3.962-1.425-4.083-4.083-.044-.968-.054-1.32-.054-3.752 0-2.43.01-2.784.054-3.752.121-2.647 1.425-3.962 4.083-4.083.968-.044 1.32-.054 3.752-.054H12.315zm0-1.802h-1.37C8.302 .197 7.727.213 7.043.275c-3.11.142-4.814 1.835-4.957 4.957-.061.684-.077 1.259-.077 4.872 0 3.613.016 4.189.077 4.872.142 3.11 1.846 4.814 4.957 4.957.684.062 1.259.077 4.872.077 3.613 0 4.189-.016 4.872-.077 3.11-.142 4.814-1.835 4.957-4.957.061-.684.077-1.259.077-4.872 0-3.613-.016-4.189-.077-4.872-.142-3.11-1.846-4.814-4.957-4.957-.684-.062-1.259-.077-4.872-.077zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Instagram</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            {{-- Bagian Hubungi Kami --}}
             <div>
                 <h4 class="text-sm font-bold uppercase tracking-[0.2em] text-[#F3EDE3] mb-6">Hubungi Kami</h4>
                 <ul class="space-y-4 text-sm text-[#E4DBC4]/80">
@@ -455,6 +484,8 @@
                     <li class="flex items-center gap-3"><span>✉️</span> hidayaturrahmannwdi@gmail.com</li>
                 </ul>
             </div>
+
+            {{-- Bagian Alamat Lengkap --}}
             <div>
                 <h4 class="text-sm font-bold uppercase tracking-[0.2em] text-[#F3EDE3] mb-6">Alamat Lengkap</h4>
                 <p class="text-sm leading-7 text-[#E4DBC4]/80">
@@ -463,6 +494,7 @@
                     Kode Pos 83352.
                 </p>
             </div>
+
         </div>
         <div class="mt-20 border-t border-white/5 pt-8 text-center text-xs text-[#E4DBC4]/40">
             <p>&copy; {{ date('Y') }} YPSH NWDI Menggala. Hak Cipta Dilindungi.</p>

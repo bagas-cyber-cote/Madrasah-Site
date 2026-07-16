@@ -12,7 +12,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 ->name('bio_data.index');
     Route::livewire('data_guru', 'pages:data_guru.index')
 ->name('data_guru.index');
-     Route::livewire('userr', 'pages::userr.index')
+    Route::livewire('userr', 'pages::userr.index')
 ->name('userr.index');
     Route::livewire('pelaporan', 'pages::pelaporan.index')
 ->name('pelaporan.index');
