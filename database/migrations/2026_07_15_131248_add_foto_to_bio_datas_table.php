@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('data__gurus', function (Blueprint $table) {
-            $table->id();
-            $table->int('date')->nullable();
-            $table->timestamps();
+        Schema::table('bio_datas', function (Blueprint $table) {
+            $table->string('foto')->nullable()->after('id');
         });
     }
 
@@ -23,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('data__gurus');
+        Schema::table('bio_datas', function (Blueprint $table) {
+               $table->dropColumn('foto');
+        });
     }
 };

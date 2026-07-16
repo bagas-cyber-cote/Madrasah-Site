@@ -14,7 +14,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
 ->name('data_guru.index');
      Route::livewire('userr', 'pages::userr.index')
 ->name('userr.index');
-
+    Route::livewire('pelaporan', 'pages::pelaporan.index')
+->name('pelaporan.index');
+    Route::livewire('kelola_laporan', 'pages::admin.index')
+->name('kelola_laporan.index');
 });
 
 

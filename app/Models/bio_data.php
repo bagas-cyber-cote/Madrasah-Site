@@ -9,6 +9,7 @@ class bio_data extends Model
 {
     protected $fillable = [
         'user_id',
+        'foto',
         'nama',
         'tanggal_lahir',
         'jenis_kelamin',
