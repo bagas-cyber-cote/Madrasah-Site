@@ -20,12 +20,7 @@
 
     <div class="relative flex min-h-screen items-center justify-center px-6">
 
-        {{-- 
-            =========================================
-            ANIMATED LIQUID GLASS BACKGROUND BLOBS
-            =========================================
-            Bulatan cahaya bergerak perlahan yang membiaskan warna di balik card transparan
-        --}}
+        <!-- ulatan cahaya bergerak perlahan yang membiaskan warna di balik card transparan -->
         <div class="absolute -left-20 -top-20 h-[450px] w-[450px] rounded-full bg-emerald-500/15 blur-[100px] animate-[liquid-1_25s_infinite_alternate_ease-in-out]"></div>
         <div class="absolute -right-20 -bottom-20 h-[500px] w-[500px] rounded-full bg-emerald-600/10 blur-[120px] animate-[liquid-2_30s_infinite_alternate_ease-in-out]"></div>
         <div class="absolute left-1/4 top-1/3 h-[350px] w-[350px] rounded-full bg-yellow-600/10 blur-[110px] animate-[liquid-3_20s_infinite_alternate_ease-in-out]"></div>

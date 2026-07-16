@@ -29,6 +29,12 @@
                 <a href="#beranda" class="nav-link rounded-full px-5 py-2 text-xs font-bold uppercase tracking-widest text-[#F3EDE3] transition duration-300 hover:bg-[#45644A]/40 hover:text-[#E4DBC4]">
                     Beranda
                 </a>
+                <a href="#visi_dan_misi" class="nav-link rounded-full px-5 py-2 text-xs font-bold uppercase tracking-widest text-[#F3EDE3] transition duration-300 hover:bg-[#45644A]/40 hover:text-[#E4DBC4]">
+                    Visi dan Misi
+                </a>
+                <a href="#berita" class="nav-link rounded-full px-5 py-2 text-xs font-bold uppercase tracking-widest text-[#F3EDE3] transition duration-300 hover:bg-[#45644A]/40 hover:text-[#E4DBC4]">
+                    Berita
+                </a>
                 <a href="#sejarah" class="nav-link rounded-full px-5 py-2 text-xs font-bold uppercase tracking-widest text-[#E4DBC4]/80 transition duration-300 hover:bg-[#45644A]/40 hover:text-[#F3EDE3]">
                     Sejarah
                 </a>
@@ -102,7 +108,144 @@
     </div>
 </section>
 
-<!-- Berita Section -->
+<!-- VISI DAN MISI SECTION -->
+<section id="visi_dan_misi" class="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-[#12271C] via-[#142F21] to-[#153324]">
+    <!-- Ambient Glow Background -->
+    <div class="absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-[#45644A]/15 blur-[160px] pointer-events-none"></div>
+    <div class="absolute left-0 bottom-1/4 h-[550px] w-[550px] rounded-full bg-[#E4DBC4]/5 blur-[180px] pointer-events-none"></div>
+    
+    <div class="relative z-10 mx-auto max-w-7xl px-8 w-full py-24">
+        <!-- Header Section -->
+        <div class="text-center mb-20">
+            <span class="inline-flex rounded-full border border-[#E4DBC4]/20 bg-white/10 backdrop-blur-2xl px-6 py-2 text-xs font-bold uppercase tracking-[0.35em] text-[#E4DBC4] shadow-[0_8px_40px_rgba(255,255,255,.08)]">
+                PONDASI KAMI
+            </span>
+            <h2 class="mt-6 text-5xl font-black text-[#F3EDE3]">
+                Visi & <span class="text-[#E4DBC4]">Misi</span>
+            </h2>
+        </div>
+
+        <div class="grid gap-12 lg:grid-cols-5 items-start">
+            <!-- Box Visi (Lebih besar/lebar) -->
+            <div class="lg:col-span-2 group relative rounded-[45px] border border-white/15 bg-white/5 backdrop-blur-3xl p-10 shadow-[0_30px_60px_rgba(0,0,0,.3)] transition duration-500 hover:-translate-y-2 hover:bg-white/10 flex flex-col h-full justify-center">
+                <div class="absolute inset-0 rounded-[45px] bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none"></div>
+                
+                <span class="text-xs font-bold uppercase tracking-widest text-[#E4DBC4]/70 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full w-max mb-6">
+                    VISI UTAMA
+                </span>
+                <h3 class="text-3xl font-black text-[#F3EDE3] mb-6">Menjadi Pusat <span class="text-[#E4DBC4]">Pendidikan Islam</span> Unggul</h3>
+                <p class="text-[#E4DBC4]/85 leading-9 text-lg text-justify">
+                    Terwujudnya lembaga pendidikan yang unggul dalam melahirkan generasi bertakwa, berakhlak mulia, cerdas, terampil, dan berdaya saing global berlandaskan nilai-nilai Ahlussunnah wal Jama'ah.
+                </p>
+            </div>
+
+            <!-- Box Misi (Daftar Poin Berjajar) -->
+            <div class="lg:col-span-3 space-y-6">
+                <!-- Misi 1 -->
+                <div class="group relative rounded-[35px] border border-white/15 bg-white/5 backdrop-blur-3xl p-6 shadow-[0_20px_40px_rgba(0,0,0,.2)] transition duration-500 hover:bg-white/10 flex gap-6 items-start">
+                    <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-[#45644A] font-black text-[#F3EDE3] text-lg shadow-md">1</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-[#F3EDE3] mb-2">Pendidikan Karakter & Spiritual</h4>
+                        <p class="text-[#E4DBC4]/80 leading-7 text-sm text-justify">Menyelenggarakan sistem pembelajaran terpadu yang mengintegrasikan nilai-nilai spiritual, moralitas keagamaan, dan akhlakul karimah ke dalam kehidupan sehari-hari.</p>
+                    </div>
+                </div>
+
+                <!-- Misi 2 -->
+                <div class="group relative rounded-[35px] border border-white/15 bg-white/5 backdrop-blur-3xl p-6 shadow-[0_20px_40px_rgba(0,0,0,.2)] transition duration-500 hover:bg-white/10 flex gap-6 items-start">
+                    <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-[#45644A] font-black text-[#F3EDE3] text-lg shadow-md">2</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-[#F3EDE3] mb-2">Transformasi Digital & Mutu Akademik</h4>
+                        <p class="text-[#E4DBC4]/80 leading-7 text-sm text-justify">Mengembangkan kurikulum akademik modern yang inovatif, adaptif, berbasis teknologi digital terkini demi melahirkan lulusan yang siap bersaing secara global.</p>
+                    </div>
+                </div>
+
+                <!-- Misi 3 -->
+                <div class="group relative rounded-[35px] border border-white/15 bg-white/5 backdrop-blur-3xl p-6 shadow-[0_20px_40px_rgba(0,0,0,.2)] transition duration-500 hover:bg-white/10 flex gap-6 items-start">
+                    <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-[#45644A] font-black text-[#F3EDE3] text-lg shadow-md">3</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-[#F3EDE3] mb-2">Pengembangan Potensi & Bakat Santri</h4>
+                        <p class="text-[#E4DBC4]/80 leading-7 text-sm text-justify">Memfasilitasi pengembangan minat, bakat, dan potensi kepemimpinan santri melalui berbagai program ekstrakurikuler, keorganisasian, serta pelatihan kewirausahaan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BERITA SECTION -->
+<section id="berita" class="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-[#153324] via-[#142B1E] to-[#12271C]">
+    <!-- Ambient Glow Background -->
+    <div class="absolute left-0 top-1/4 h-[500px] w-[500px] rounded-full bg-[#45644A]/20 blur-[170px] pointer-events-none"></div>
+    <div class="absolute right-0 bottom-1/4 h-[450px] w-[450px] rounded-full bg-[#E4DBC4]/10 blur-[150px] pointer-events-none"></div>
+    
+    <div class="relative z-10 mx-auto max-w-7xl px-8 w-full py-24">
+        <!-- Header Section -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+            <div>
+                <span class="inline-flex rounded-full border border-[#E4DBC4]/20 bg-white/10 backdrop-blur-2xl px-6 py-2 text-xs font-bold uppercase tracking-[0.35em] text-[#E4DBC4] shadow-[0_8px_40px_rgba(255,255,255,.08)]">
+                    INFORMASI TERKINI
+                </span>
+                <h2 class="mt-6 text-5xl font-black text-[#F3EDE3]">
+                    Berita & <span class="text-[#E4DBC4]">Artikel</span>
+                </h2>
+            </div>
+            <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-[#E4DBC4] hover:text-[#F3EDE3] transition duration-300 group border-b border-[#E4DBC4]/30 pb-1">
+                Lihat Semua Berita <span class="transform transition-transform group-hover:translate-x-1">➔</span>
+            </a>
+        </div>
+
+        <!-- Grid Berita (3 Kolom) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+            <!-- Artikel 1 -->
+            <div class="group relative rounded-[45px] border border-white/15 bg-white/5 backdrop-blur-3xl p-6 shadow-[0_30px_60px_rgba(0,0,0,.3)] transition duration-500 hover:-translate-y-2 hover:bg-white/10 flex flex-col h-full">
+                <div class="relative w-full aspect-[4/3] rounded-[35px] border-4 border-[#45644A] overflow-hidden shadow-lg bg-[#1B3E2A] mb-6 flex-shrink-0">
+                    <img src="{{ asset('images/berita1.jpg') }}" class="h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110" alt="Berita 1">
+                    <div class="absolute top-4 left-4 bg-[#12271C]/80 border border-white/10 backdrop-blur-md text-[#E4DBC4] px-4 py-1.5 rounded-full text-xs font-bold">Akademik</div>
+                </div>
+                <div class="flex items-center gap-3 text-xs text-[#E4DBC4]/60 mb-3">
+                    <span>📅 14 Juli 2026</span>
+                    <span>•</span>
+                    <span>✍️ Admin</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#F3EDE3] mb-4 line-clamp-2 group-hover:text-[#E4DBC4] transition duration-300">Penerimaan Santri Baru Tahun Ajaran Baru Resmi Dibuka</h3>
+                <p class="text-[#E4DBC4]/80 leading-7 text-sm text-justify line-clamp-3 mb-6">YPSH NWDI Menggala kembali membuka pendaftaran santri baru dengan kurikulum terintegrasi dan sistem digitalisasi penuh...</p>
+                <a href="#" class="mt-auto inline-flex items-center gap-2 text-sm font-bold text-[#E4DBC4] group/btn">Baca Selengkapnya <span class="transform transition-transform group-hover/btn:translate-x-1">→</span></a>
+            </div>
+
+            <!-- Artikel 2 -->
+            <div class="group relative rounded-[45px] border border-white/15 bg-white/5 backdrop-blur-3xl p-6 shadow-[0_30px_60px_rgba(0,0,0,.3)] transition duration-500 hover:-translate-y-2 hover:bg-white/10 flex flex-col h-full">
+                <div class="relative w-full aspect-[4/3] rounded-[35px] border-4 border-[#45644A] overflow-hidden shadow-lg bg-[#1B3E2A] mb-6 flex-shrink-0">
+                    <img src="{{ asset('images/berita2.jpg') }}" class="h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110" alt="Berita 2">
+                    <div class="absolute top-4 left-4 bg-[#12271C]/80 border border-white/10 backdrop-blur-md text-[#E4DBC4] px-4 py-1.5 rounded-full text-xs font-bold">Kegiatan</div>
+                </div>
+                <div class="flex items-center gap-3 text-xs text-[#E4DBC4]/60 mb-3">
+                    <span>📅 10 Juli 2026</span>
+                    <span>•</span>
+                    <span>✍️ Humas</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#F3EDE3] mb-4 line-clamp-2 group-hover:text-[#E4DBC4] transition duration-300">Semarak Khataman Al-Qur'an dan Wisuda Tahfidz Angkatan Ke-X</h3>
+                <p class="text-[#E4DBC4]/80 leading-7 text-sm text-justify line-clamp-3 mb-6">Suasana khidmat menyelimuti aula utama yayasan dalam perayaan wisuda akbar puluhan hafidz dan hafidzah berprestasi...</p>
+                <a href="#" class="mt-auto inline-flex items-center gap-2 text-sm font-bold text-[#E4DBC4] group/btn">Baca Selengkapnya <span class="transform transition-transform group-hover/btn:translate-x-1">→</span></a>
+            </div>
+
+            <!-- Artikel 3 -->
+            <div class="group relative rounded-[45px] border border-white/15 bg-white/5 backdrop-blur-3xl p-6 shadow-[0_30px_60px_rgba(0,0,0,.3)] transition duration-500 hover:-translate-y-2 hover:bg-white/10 flex flex-col h-full">
+                <div class="relative w-full aspect-[4/3] rounded-[35px] border-4 border-[#45644A] overflow-hidden shadow-lg bg-[#1B3E2A] mb-6 flex-shrink-0">
+                    <img src="{{ asset('images/berita3.jpg') }}" class="h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110" alt="Berita 3">
+                    <div class="absolute top-4 left-4 bg-[#12271C]/80 border border-white/10 backdrop-blur-md text-[#E4DBC4] px-4 py-1.5 rounded-full text-xs font-bold">Prestasi</div>
+                </div>
+                <div class="flex items-center gap-3 text-xs text-[#E4DBC4]/60 mb-3">
+                    <span>📅 05 Juli 2026</span>
+                    <span>•</span>
+                    <span>✍️ Tim Media</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#F3EDE3] mb-4 line-clamp-2 group-hover:text-[#E4DBC4] transition duration-300">Santri YPSH Menggala Raih Juara Pidato 3 Bahasa Tingkat Provinsi</h3>
+                <p class="text-[#E4DBC4]/80 leading-7 text-sm text-justify line-clamp-3 mb-6">Prestasi membanggakan kembali diukir dalam ajang perlombaan bahasa tingkat regional, memperkuat komitmen mutu mutu kompetensi...</p>
+                <a href="#" class="mt-auto inline-flex items-center gap-2 text-sm font-bold text-[#E4DBC4] group/btn">Baca Selengkapnya <span class="transform transition-transform group-hover/btn:translate-x-1">→</span></a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- SEJARAH SECTION -->
 <section id="sejarah" class="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-[#12271C] via-[#102017] to-[#0E1812]">
@@ -249,8 +392,8 @@
                 <p class="text-[#E4DBC4]/80 leading-6 text-xs text-justify">Menyabet medali emas festival seni lukis kaligrafi al-quran kontemporer tingkat provinsi.</p>
             </div>
 
-        <!-- box 6 -->
-        <div class="group relative rounded-[45px] border border-white/15 bg-white/5 backdrop-blur-3xl p-6 shadow-[0_30px_60px_rgba(0,0,0,.3)] transition duration-500 hover:-translate-y-2 hover:bg-white/10 flex flex-col items-center text-center h-full">
+            <!-- box 6 -->
+            <div class="group relative rounded-[45px] border border-white/15 bg-white/5 backdrop-blur-3xl p-6 shadow-[0_30px_60px_rgba(0,0,0,.3)] transition duration-500 hover:-translate-y-2 hover:bg-white/10 flex flex-col items-center text-center h-full">
                 <div class="absolute inset-0 rounded-[45px] bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none"></div>
                 
                 <div class="relative w-full aspect-square rounded-[40px] border-4 border-[#45644A] overflow-hidden shadow-lg bg-[#1B3E2A] mb-6 flex-shrink-0">
@@ -263,7 +406,7 @@
                 <p class="text-[#E4DBC4]/80 leading-6 text-xs text-justify">Mencetak lebih dari 100 hafidz dan hafidzah 30 juz yang berkompetensi tinggi di tingkat nasional.</p>
             </div>
 
-        <!-- box 7 -->
+            <!-- box 7 -->
             <div class="group relative rounded-[45px] border border-white/15 bg-white/5 backdrop-blur-3xl p-6 shadow-[0_30px_60px_rgba(0,0,0,.3)] transition duration-500 hover:-translate-y-2 hover:bg-white/10 flex flex-col items-center text-center h-full">
                 <div class="absolute inset-0 rounded-[45px] bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none"></div>
                 
@@ -277,8 +420,8 @@
                 <p class="text-[#E4DBC4]/80 leading-6 text-xs text-justify">Mencetak lebih dari 100 hafidz dan hafidzah 30 juz yang berkompetensi tinggi di tingkat nasional.</p>
             </div>
 
-        <!-- box 8 -->
-        <div class="group relative rounded-[45px] border border-white/15 bg-white/5 backdrop-blur-3xl p-6 shadow-[0_30px_60px_rgba(0,0,0,.3)] transition duration-500 hover:-translate-y-2 hover:bg-white/10 flex flex-col items-center text-center h-full">
+            <!-- box 8 -->
+            <div class="group relative rounded-[45px] border border-white/15 bg-white/5 backdrop-blur-3xl p-6 shadow-[0_30px_60px_rgba(0,0,0,.3)] transition duration-500 hover:-translate-y-2 hover:bg-white/10 flex flex-col items-center text-center h-full">
                 <div class="absolute inset-0 rounded-[45px] bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none"></div>
                 
                 <div class="relative w-full aspect-square rounded-[40px] border-4 border-[#45644A] overflow-hidden shadow-lg bg-[#1B3E2A] mb-6 flex-shrink-0">
@@ -339,7 +482,7 @@
             
             if (targetSection) {
                 // Menghitung tinggi navbar agar posisi scroll pas dan tidak menutupi judul
-                const navbarHeight = document.querySelector('nav').offsetHeight;
+                const navbarHeight = document.querySelector('nav') ? document.querySelector('nav').offsetHeight : 0;
                 const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - navbarHeight;
                 
                 // Menjalankan animasi gulir halus ke atas atau ke bawah
