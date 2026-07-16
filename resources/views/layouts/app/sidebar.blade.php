@@ -146,7 +146,15 @@
                                 {{ __('Kelola User') }}
                             </flux:sidebar.item>
                         @endif
-
+                            <flux:sidebar.item 
+                                icon="home" 
+                                :href="route('pelaporan.index')" 
+                                :current="request()->routeIs('pelaporan.index')" 
+                                wire:navigate
+                                class="liquid-click-effect hover:!bg-emerald-500/10 hover:!text-emerald-300 data-[current]:!bg-emerald-500/15 data-[current]:!text-emerald-400 data-[current]:!border-s-2 data-[current]:!border-emerald-400 rounded-xl transition-all duration-200"
+                                >
+                                    {{__('Pelaporan Pengajar')}}
+                            </flux:sidebar.item>
                     </flux:sidebar.group>
                 </flux:sidebar.nav>
 
