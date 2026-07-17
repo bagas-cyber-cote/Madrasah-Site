@@ -163,7 +163,93 @@ new class extends Component
                 <div class="border border-white/5 rounded-lg p-3 bg-black/20 text-white/90">
                     {{ $bio?->asal_sekolah ?? '' }}
                 </div>
+                <div>
+                 <flux:heading size="sm" class="text-white/70 mb-1">Email</flux:heading>
+                <div class="border border-white/5 rounded-lg p-3 bg-black/20 text-white/90">
+                     {{ $bio->email ?? '-' }}
+                </div>
             </div>
+
+            <div>
+    <flux:heading size="sm" class="text-white/70 mb-1">NISN</flux:heading>
+    <div class="border border-white/5 rounded-lg p-3 bg-black/20 text-white/90">
+        {{ $bio->nisn ?? '-' }}
+    </div>
+</div>
+
+<div>
+    <flux:heading size="sm" class="text-white/70 mb-1">NIK</flux:heading>
+    <div class="border border-white/5 rounded-lg p-3 bg-black/20 text-white/90">
+        {{ $bio->nik ?? '-' }}
+    </div>
+</div>
+
+<div>
+    <flux:heading size="sm" class="text-white/70 mb-1">Nama Ayah</flux:heading>
+    <div class="border border-white/5 rounded-lg p-3 bg-black/20 text-white/90">
+        {{ $bio->nama_ayah ?? '-' }}
+    </div>
+</div>
+
+<div>
+    <flux:heading size="sm" class="text-white/70 mb-1">Nama Ibu</flux:heading>
+    <div class="border border-white/5 rounded-lg p-3 bg-black/20 text-white/90">
+        {{ $bio->nama_ibu ?? '-' }}
+    </div>
+</div>
+
+<div>
+    <flux:heading size="sm" class="text-white/70 mb-1">No HP</flux:heading>
+    <div class="border border-white/5 rounded-lg p-3 bg-black/20 text-white/90">
+        {{ $bio->no_hp ?? '-' }}
+    </div>
+</div>
+
+<div>
+    <flux:heading size="sm" class="text-white/70 mb-1">Tahun Ajaran</flux:heading>
+    <div class="border border-white/5 rounded-lg p-3 bg-black/20 text-white/90">
+        {{ $bio->tahun_ajaran ?? '-' }}
+    </div>
+</div>
+
+<div>
+    <flux:heading size="sm" class="text-white/70 mb-1">Status</flux:heading>
+    <div class="border border-white/5 rounded-lg p-3 bg-black/20 text-white/90">
+        {{ $bio->status ?? '-' }}
+    </div>
+</div>
+
+@if($bio?->foto_kk)
+<div>
+    <flux:heading size="sm" class="text-white/70 mb-1">
+        Foto Kartu Keluarga
+    </flux:heading>
+
+    <img
+        src="{{ asset('storage/' . $bio->foto_kk) }}"
+        alt="Foto KK"
+        class="w-full rounded-lg border border-white/10"
+    >
+</div>
+@endif
+
+@if($bio?->sertifikat)
+<div>
+    <flux:heading size="sm" class="text-white/70 mb-1">
+        Sertifikat
+    </flux:heading>
+
+    <a
+        href="{{ asset('storage/' . $bio->sertifikat) }}"
+        target="_blank"
+        class="text-blue-400 hover:underline"
+    >
+        Lihat Sertifikat
+    </a>
+</div>
+@endif
+            </div>
+            
 
             @if($bio)
                 <div class="flex justify-center mt-6">
