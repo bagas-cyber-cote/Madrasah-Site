@@ -2,11 +2,8 @@
     use App\Models\User;
     use App\Models\pelaporan_pengajar; 
 
-    // 1. Ambil data statistik dasar
     $totalGuru = User::where('role', 'Guru')->count();
     $totalSiswa = User::where('role', 'Siswa')->count();
-
-    // 2. Hitung jumlah seluruh laporan mengajar yang telah dikirimkan
     $totalLaporan = pelaporan_pengajar::count();
 @endphp
 
