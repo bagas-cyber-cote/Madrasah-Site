@@ -113,6 +113,7 @@
                             </flux:sidebar.item>
                     
 
+<<<<<<< HEAD
                         <flux:sidebar.item 
                             icon="building-office" 
                             :href="route('profil-sekolah.index')" 
@@ -124,6 +125,8 @@
                         </flux:sidebar.item>
 
 
+=======
+>>>>>>> bc7dde57b67c307c89db3788b9e072946f57f7a9
                         {{-- BOX: Profil Sekolah --}}
                         <div class="mb-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
                             <flux:sidebar.item 
