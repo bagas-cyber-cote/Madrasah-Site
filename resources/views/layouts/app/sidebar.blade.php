@@ -12,13 +12,16 @@
                 font-family: 'Plus Jakarta Sans', sans-serif !important;
             }
 
-            /* Custom scrollbar halus untuk sidebar */
+            /* Custom scrollbar halus disesuaikan dengan tema forest green */
             .custom-sidebar-scroll::-webkit-scrollbar {
                 width: 4px;
             }
             .custom-sidebar-scroll::-webkit-scrollbar-thumb {
-                background: rgba(16, 185, 129, 0.2);
+                background: rgba(228, 219, 196, 0.15);
                 border-radius: 10px;
+            }
+            .custom-sidebar-scroll::-webkit-scrollbar-thumb:hover {
+                background: rgba(228, 219, 196, 0.3);
             }
 
             /* 
@@ -29,10 +32,10 @@
             .liquid-click-effect {
                 position: relative;
                 overflow: hidden;
-                transition: all 0.3s ease;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             }
 
-            /* Efek riak air/cairan menyebar saat item aktif atau ditekan */
+            /* Efek riak air menggunakan warna krem hangat dari tema Hero */
             .liquid-click-effect::after {
                 content: '';
                 position: absolute;
@@ -40,24 +43,22 @@
                 left: 50%;
                 width: 0;
                 height: 0;
-                background: rgba(16, 185, 129, 0.35); /* Warna hijau liquid semi-transparan */
+                background: rgba(228, 219, 196, 0.15); 
                 border-radius: 50%;
                 transform: translate(-50%, -50%);
-                transition: width 0.4s ease-out, height 0.4s ease-out, opacity 0.4s ease-out;
+                transition: width 0.5s ease-out, height 0.5s ease-out, opacity 0.5s ease-out;
                 opacity: 0;
                 pointer-events: none;
                 z-index: 0;
             }
 
-            /* Trigger animasi ketika elemen sedang di-klik (aktif) */
             .liquid-click-effect:active::after {
-                width: 250px;
-                height: 250px;
+                width: 300px;
+                height: 300px;
                 opacity: 1;
-                transition: 0s; /* Langsung melebar seketika saat ditekan */
+                transition: 0s;
             }
 
-            /* Memastikan teks/icon menu tetap berada di atas efek cairan */
             .liquid-click-effect > * {
                 position: relative;
                 z-index: 1;
@@ -65,52 +66,54 @@
         </style>
     </head>
     
-    <body class="min-h-screen bg-gradient-to-br from-[#0b2416] via-[#07190f] to-[#040d08] text-zinc-100 antialiased overflow-x-hidden">
+    <body class="min-h-screen bg-gradient-to-b from-[#18442A] via-[#1B3E2A] to-[#12271C] text-[#F3EDE3] antialiased overflow-x-hidden relative">
 
         {{-- 
             =========================================
-            LIQUID LIGHTS (DIPINDAH KE BELAKANG SIDEBAR)
+            BACKGROUND AMBIENT GLOW (TEMA HERO)
             =========================================
-            Posisi div ini digeser ke kiri (left-0, -left-20) agar cahayanya tepat berada di balik 
-            sidebar, membuat efek kaca (backdrop-blur) pada sidebar bekerja sempurna!
         --}}
-        <div class="absolute -left-20 -top-20 h-[500px] w-[500px] rounded-full bg-emerald-500/15 blur-[100px] animate-[liquid-1_20s_infinite_alternate_ease-in-out] pointer-events-none z-0"></div>
-        <div class="absolute -left-10 bottom-10 h-[450px] w-[450px] rounded-full bg-yellow-600/10 blur-[120px] animate-[liquid-2_25s_infinite_alternate_ease-in-out] pointer-events-none z-0"></div>
-        <div class="absolute right-10 bottom-10 h-[500px] w-[500px] rounded-full bg-emerald-600/5 blur-[120px] pointer-events-none z-0"></div>
+        <div class="absolute -left-52 -top-52 h-[550px] w-[550px] rounded-full bg-[#45644A]/25 blur-[150px] animate-[liquid-1_20s_infinite_alternate_ease-in-out] pointer-events-none z-0"></div>
+        <div class="absolute -left-20 bottom-10 h-[450px] w-[450px] rounded-full bg-[#E4DBC4]/8 blur-[130px] animate-[liquid-2_25s_infinite_alternate_ease-in-out] pointer-events-none z-0"></div>
+        <div class="absolute right-10 bottom-10 h-[500px] w-[500px] rounded-full bg-[#45644A]/10 blur-[150px] pointer-events-none z-0"></div>
 
         <div class="flex min-h-screen relative z-10">
 
             {{-- 
                 =========================================
-                LIQUID GLASS SIDEBAR (DIPERBAIKI)
+                LIQUID GLASS SIDEBAR
                 =========================================
-                Penambahan class inline css styling untuk memaksa transparansi backdrop
             --}}
             <flux:sidebar 
                 sticky 
                 collapsible="mobile" 
-                style="background-color: rgba(15, 29, 21, 0.4) !important; backdrop-filter: blur(24px) !important; -webkit-backdrop-filter: blur(24px) !important;"
-                class="!border-e !border-emerald-500/15 shadow-[10px_0_40px_-15px_rgba(0,0,0,0.7)] custom-sidebar-scroll"
+                style="background-color: rgba(24, 68, 42, 0.25) !important; backdrop-filter: blur(32px) !important; -webkit-backdrop-filter: blur(32px) !important;"
+                class="!border-e !border-[#E4DBC4]/15 shadow-[15px_0_50px_-15px_rgba(12,39,28,0.7)] custom-sidebar-scroll"
             >
-                <flux:sidebar.header class="border-b border-emerald-500/10 pb-4">
+                {{-- Header Sidebar --}}
+                <flux:sidebar.header class="border-b border-[#E4DBC4]/10 pb-4">
                     <x-app-logo :sidebar="true" href="{{ route('dashboard') }}" wire:navigate />
-                    <flux:sidebar.collapse class="lg:hidden text-emerald-400 hover:bg-emerald-500/10" />
+                    <flux:sidebar.collapse class="lg:hidden text-[#E4DBC4] hover:bg-white/10" />
                 </flux:sidebar.header>
 
                 {{-- Navigasi Utama --}}
                 <flux:sidebar.nav class="mt-6">
-                    <flux:sidebar.group :heading="__('Platform')" class="grid text-emerald-500/70 font-semibold tracking-wider text-xs uppercase">
+                    <flux:sidebar.group :heading="__('Platform')" class="grid text-[#E4DBC4]/60 font-bold tracking-[0.2em] text-[10px] uppercase pb-4">
                         
+                        {{-- BOX: Dashboard --}}
+                        <div class="mb-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
                             <flux:sidebar.item 
                                 icon="home" 
                                 :href="route('dashboard')" 
                                 :current="request()->routeIs('dashboard')" 
                                 wire:navigate
-                                class="liquid-click-effect hover:!bg-emerald-500/10 hover:!text-emerald-300 data-[current]:!bg-emerald-500/15 data-[current]:!text-emerald-400 data-[current]:!border-s-2 data-[current]:!border-emerald-400 rounded-xl transition-all duration-200"
+                                class="liquid-click-effect !bg-transparent !border-0 !shadow-none !ring-0 text-[#E4DBC4]/80 hover:!text-[#F3EDE3] data-[current]:!text-[#F3EDE3] rounded-lg transition-all duration-300"
                             >
                                 {{ __('Dashboard') }}
                             </flux:sidebar.item>
+                        </div>
 
+<<<<<<< HEAD
                         <flux:sidebar.item 
                             icon="building-office" 
                             :href="route('profil-sekolah.index')" 
@@ -122,82 +125,122 @@
                         </flux:sidebar.item>
 
                         @if(auth()->check() && auth()->user()->role == 'siswa')
+
+                        {{-- BOX: Profil Sekolah --}}
+                        <div class="mb-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
                             <flux:sidebar.item 
                                 icon="building-office" 
-                                :href="route('bio_data.index')" 
-                                :current="request()->routeIs('bio_data.index')" 
+                                :href="route('profil-sekolah.index')" 
+                                :current="request()->routeIs('profil-sekolah.index')" 
                                 wire:navigate
-                                class="liquid-click-effect hover:!bg-emerald-500/10 hover:!text-emerald-300 data-[current]:!bg-emerald-500/15 data-[current]:!text-emerald-400 data-[current]:!border-s-2 data-[current]:!border-emerald-400 rounded-xl transition-all duration-200"
+                                class="liquid-click-effect !bg-transparent !border-0 !shadow-none !ring-0 text-[#E4DBC4]/80 hover:!text-[#F3EDE3] data-[current]:!text-[#F3EDE3] rounded-lg transition-all duration-300"
                             >
-                                {{ __('Bio Data Siswa') }}
+                                {{ __('Profil Sekolah') }}
                             </flux:sidebar.item>
-                        @endif
+                        </div>
 
-                        @if(auth()->check() && auth()->user()->role == 'Admin')
-                            <flux:sidebar.item
-                                icon="building-office"
-                                :href="route('userr.index')"
-                                :current="request()->routeIs('userr.index')"
-                                wire:navigate 
-                                class="liquid-click-effect hover:!bg-emerald-500/10 hover:!text-emerald-300 data-[current]:!bg-emerald-500/15 data-[current]:!text-emerald-400 data-[current]:!border-s-2 data-[current]:!border-emerald-400 rounded-xl transition-all duration-200"
-                            >
-                                {{ __('Kelola User') }}
-                            </flux:sidebar.item>
-                        @endif
-
-                            @if(auth()->check() && auth()->user()->role == 'Guru')
-                            <flux:sidebar.item 
-                                icon="home" 
-                                :href="route('pelaporan.index')" 
-                                :current="request()->routeIs('pelaporan.index')" 
-                                wire:navigate
-                                class="liquid-click-effect hover:!bg-emerald-500/10 hover:!text-emerald-300 data-[current]:!bg-emerald-500/15 data-[current]:!text-emerald-400 data-[current]:!border-s-2 data-[current]:!border-emerald-400 rounded-xl transition-all duration-200"
+                        {{-- BOX: Bio Data Siswa (Conditional) --}}
+                        @if((auth()->check() && auth()->user()->role == 'siswa') || auth()->user()->role == 'Admin')
+                            <div class="mb-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
+                                <flux:sidebar.item 
+                                    icon="building-office" 
+                                    :href="route('bio_data.index')" 
+                                    :current="request()->routeIs('bio_data.index')" 
+                                    wire:navigate
+                                    class="liquid-click-effect !bg-transparent !border-0 !shadow-none !ring-0 text-[#E4DBC4]/80 hover:!text-[#F3EDE3] data-[current]:!text-[#F3EDE3] rounded-lg transition-all duration-300"
                                 >
-                                    {{__('Pelaporan Pengajar')}}
-                            </flux:sidebar.item>
+                                    {{ __('Bio Data Siswa') }}
+                                </flux:sidebar.item>
+                            </div>
                         @endif
 
-                             @if(auth()->check() && auth()->user()->role == 'Admin')
-                             <flux:sidebar.item 
-                                icon="home" 
-                                :href="route('kelola_laporan.index')" 
-                                :current="request()->routeIs('kelola_laporan.index')" 
-                                wire:navigate
-                                class="liquid-click-effect hover:!bg-emerald-500/10 hover:!text-emerald-300 data-[current]:!bg-emerald-500/15 data-[current]:!text-emerald-400 data-[current]:!border-s-2 data-[current]:!border-emerald-400 rounded-xl transition-all duration-200"
+                        {{-- BOX: Kelola User (Conditional) --}}
+                        @if(auth()->check() && auth()->user()->role == 'Admin')
+                            <div class="mb-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
+                                <flux:sidebar.item
+                                    icon="building-office"
+                                    :href="route('userr.index')"
+                                    :current="request()->routeIs('userr.index')"
+                                    wire:navigate 
+                                    class="liquid-click-effect !bg-transparent !border-0 !shadow-none !ring-0 text-[#E4DBC4]/80 hover:!text-[#F3EDE3] data-[current]:!text-[#F3EDE3] rounded-lg transition-all duration-300"
+                                >
+                                    {{ __('Kelola User') }}
+                                </flux:sidebar.item>
+                            </div>
+                        @endif
+
+                        {{-- BOX: Laporan Belajar (Conditional) --}}
+                        @if(auth()->check() && auth()->user()->role == 'Guru')
+                            <div class="mb-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
+                                <flux:sidebar.item 
+                                    icon="home" 
+                                    :href="route('pelaporan.index')" 
+                                    :current="request()->routeIs('pelaporan.index')" 
+                                    wire:navigate
+                                    class="liquid-click-effect !bg-transparent !border-0 !shadow-none !ring-0 text-[#E4DBC4]/80 hover:!text-[#F3EDE3] data-[current]:!text-[#F3EDE3] rounded-lg transition-all duration-300"
+                                >
+                                    {{__('Laporan Belajar')}}
+                                </flux:sidebar.item>
+                            </div>
+                        @endif
+
+                        {{-- BOX: Kelola Laporan (Conditional) --}}
+                        @if(auth()->check() && auth()->user()->role == 'Admin')
+                            <div class="mb-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
+                                <flux:sidebar.item 
+                                    icon="home" 
+                                    :href="route('kelola_laporan.index')" 
+                                    :current="request()->routeIs('kelola_laporan.index')" 
+                                    wire:navigate
+                                    class="liquid-click-effect !bg-transparent !border-0 !shadow-none !ring-0 text-[#E4DBC4]/80 hover:!text-[#F3EDE3] data-[current]:!text-[#F3EDE3] rounded-lg transition-all duration-300"
                                 >
                                     {{__('Kelola Laporan')}}
-                            </flux:sidebar.item>
+                                </flux:sidebar.item>
+                            </div>
                         @endif
                     </flux:sidebar.group>
                 </flux:sidebar.nav>
 
                 <flux:spacer />
 
-                {{-- Navigasi Bawah / Tautan Luar --}}
-                <flux:sidebar.nav class="border-t border-emerald-500/10 pt-4">
-                    <flux:sidebar.item 
-                        icon="folder-git-2" 
-                        href="https://github.com/laravel/livewire-starter-kit" 
-                        target="_blank"
-                        class="liquid-click-effect hover:!bg-emerald-500/5 hover:!text-emerald-300 rounded-xl"
-                    >
-                        {{ __('Repository') }}
-                    </flux:sidebar.item>
+                {{-- 
+                    ======================================================
+                    TIGA BOX LIQUID GLASS TERPISAH (BAWAH SIDEBAR)
+                    ======================================================
+                --}}
+                <div class="mt-auto mb-4 space-y-4">
+                    
+                    {{-- BOX 1: Repository --}}
+                    <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
+                        <flux:sidebar.item 
+                            icon="folder-git-2" 
+                            href="https://github.com/laravel/livewire-starter-kit" 
+                            target="_blank"
+                            class="liquid-click-effect !bg-transparent !border-0 !shadow-none !ring-0 text-[#E4DBC4]/85 hover:!text-[#F3EDE3] rounded-lg transition-all duration-300"
+                        >
+                            {{ __('Repository') }}
+                        </flux:sidebar.item>
+                    </div>
 
-                    <flux:sidebar.item 
-                        icon="book-open-text" 
-                        href="https://laravel.com/docs/starter-kits#livewire" 
-                        target="_blank"
-                        class="liquid-click-effect hover:!bg-emerald-500/5 hover:!text-emerald-300 rounded-xl"
-                    >
-                        {{ __('Documentation') }}
-                    </flux:sidebar.item>
-                </flux:sidebar.nav>
+                    {{-- BOX 2: Documentation --}}
+                    <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
+                        <flux:sidebar.item 
+                            icon="book-open-text" 
+                            href="https://laravel.com/docs/starter-kits#livewire" 
+                            target="_blank"
+                            class="liquid-click-effect !bg-transparent !border-0 !shadow-none !ring-0 text-[#E4DBC4]/85 hover:!text-[#F3EDE3] rounded-lg transition-all duration-300"
+                        >
+                            {{ __('Documentation') }}
+                        </flux:sidebar.item>
+                    </div>
 
-                {{-- Menu Pengguna Desktop --}}
-                <div class="mt-4 border-t border-emerald-500/10 pt-4">
-                    <x-desktop-user-menu class="hidden lg:block !text-zinc-200" :name="auth()->user()->name" />
+                    {{-- BOX 3: Desktop User Menu --}}
+                    <div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1.5 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
+                        <x-desktop-user-menu class="hidden lg:block !text-[#F3EDE3]" :name="auth()->user()->name" />
+                    </div>
+
                 </div>
+
             </flux:sidebar>
 
             {{-- 
@@ -208,8 +251,8 @@
             <div class="flex-1 flex flex-col min-w-0 relative z-10">
                 
                 <!-- Mobile User Header Menu -->
-                <flux:header style="background-color: rgba(15, 29, 21, 0.4) !important; backdrop-filter: blur(16px) !important;" class="lg:hidden !border-b !border-emerald-500/15 px-6">
-                    <flux:sidebar.toggle class="lg:hidden text-emerald-400" icon="bars-2" inset="left" />
+                <flux:header style="background-color: rgba(24, 68, 42, 0.3) !important; backdrop-filter: blur(20px) !important;" class="lg:hidden !border-b !border-[#E4DBC4]/15 px-6">
+                    <flux:sidebar.toggle class="lg:hidden text-[#E4DBC4]" icon="bars-2" inset="left" />
 
                     <flux:spacer />
 
@@ -217,45 +260,50 @@
                         <flux:profile
                             :initials="auth()->user()->initials()"
                             icon-trailing="chevron-down"
-                            class="text-zinc-200 hover:bg-emerald-500/10"
+                            class="text-[#F3EDE3] hover:bg-[#45644A]/30"
                         />
 
-                        <flux:menu class="!bg-[#0f1d15]/95 !backdrop-blur-md !border !border-emerald-500/20 text-zinc-200">
+                        {{-- DROP MENU MOBILE DENGAN DESAIN LIQUID GLASS --}}
+                        <flux:menu class="!bg-[#1B3E2A]/90 !backdrop-blur-xl !border !border-[#E4DBC4]/15 text-[#F3EDE3] rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-2">
                             <flux:menu.radio.group>
                                 <div class="p-0 text-sm font-normal">
-                                    <div class="flex items-center gap-2 px-1 py-1.5 text-start text-sm">
+                                    <div class="flex items-center gap-2 px-2 py-2 text-start text-sm">
                                         <flux:avatar
                                             :name="auth()->user()->name"
                                             :initials="auth()->user()->initials()"
-                                            class="bg-emerald-800"
+                                            class="bg-[#45644A]/60 text-[#F3EDE3] border border-[#E4DBC4]/20"
                                         />
 
                                         <div class="grid flex-1 text-start text-sm leading-tight">
-                                            <flux:heading class="truncate !text-zinc-100">{{ auth()->user()->name }}</flux:heading>
-                                            <flux:text class="truncate !text-zinc-400">{{ auth()->user()->email }}</flux:text>
+                                            <flux:heading class="truncate !text-[#F3EDE3]">{{ auth()->user()->name }}</flux:heading>
+                                            <flux:text class="truncate !text-[#E4DBC4]/70">{{ auth()->user()->email }}</flux:text>
                                         </div>
                                     </div>
                                 </div>
                             </flux:menu.radio.group>
 
-                            <flux:menu.separator class="!border-emerald-500/10" />
+                            <div class="my-2"></div> 
 
+                            {{-- Tombol Setting Liquid Glass --}}
                             <flux:menu.radio.group>
-                                <flux:menu.item :href="route('profile.edit')" icon="cog" wire:navigate class="hover:!bg-emerald-500/15">
+                                <flux:menu.item 
+                                    :href="route('profile.edit')" 
+                                    icon="cog" 
+                                    wire:navigate 
+                                    class="group rounded-xl border border-[#E4DBC4]/10 bg-white/5 px-4 py-2.5 my-1 text-[#E4DBC4] backdrop-blur-md transition duration-300 hover:scale-[1.02] hover:bg-[#45644A]/40 hover:text-[#F3EDE3] hover:border-[#E4DBC4]/20"
+                                >
                                     {{ __('Settings') }}
                                 </flux:menu.item>
                             </flux:menu.radio.group>
 
-                            <flux:menu.separator class="!border-emerald-500/10" />
-
+                            {{-- Tombol Logout Liquid Glass --}}
                             <form method="POST" action="{{ route('logout') }}" class="w-full">
                                 @csrf
                                 <flux:menu.item
                                     as="button"
                                     type="submit"
                                     icon="arrow-right-start-on-rectangle"
-                                    class="w-full cursor-pointer hover:!bg-red-500/15 hover:!text-red-400"
-                                    data-test="logout-button"
+                                    class="w-full rounded-xl border border-red-500/10 bg-red-500/5 px-4 py-2.5 my-1 text-red-300 backdrop-blur-md transition duration-300 hover:scale-[1.02] hover:bg-red-500/15 hover:text-red-200 hover:border-red-500/35 cursor-pointer"
                                 >
                                     {{ __('Log out') }}
                                 </flux:menu.item>
@@ -265,7 +313,7 @@
                 </flux:header>
 
                 {{-- Slot Utama Konten Dashboard --}}
-                <main class="flex-1 p-6 md:p-8 lg:p-10">
+                <main class="flex-1 p-6 md:p-8 lg:p-10 relative z-10">
                     {{ $slot }}
                 </main>
                 
@@ -285,12 +333,12 @@
         <style>
             @keyframes liquid-1 {
                 0% { transform: translate(0, 0) scale(1); }
-                50% { transform: translate(50px, -30px) scale(1.15); }
+                50% { transform: translate(60px, -40px) scale(1.15); }
                 100% { transform: translate(0, 0) scale(1); }
             }
             @keyframes liquid-2 {
                 0% { transform: translate(0, 0) scale(1); }
-                50% { transform: translate(-40px, 40px) scale(0.9); }
+                50% { transform: translate(-50px, 50px) scale(0.9); }
                 100% { transform: translate(0, 0) scale(1); }
             }
         </style>
