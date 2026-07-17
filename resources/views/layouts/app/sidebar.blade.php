@@ -111,22 +111,8 @@
                             >
                                 {{ __('Dashboard') }}
                             </flux:sidebar.item>
-                    
+                        </div>
 
-<<<<<<< HEAD
-                        <flux:sidebar.item 
-                            icon="building-office" 
-                            :href="route('profil-sekolah.index')" 
-                            :current="request()->routeIs('profil-sekolah.index')" 
-                            wire:navigate
-                            class="liquid-click-effect hover:!bg-emerald-500/10 hover:!text-emerald-300 data-[current]:!bg-emerald-500/15 data-[current]:!text-emerald-400 data-[current]:!border-s-2 data-[current]:!border-emerald-400 rounded-xl transition-all duration-200"
-                        >
-                            {{ __('Profil Sekolah') }}
-                        </flux:sidebar.item>
-
-
-=======
->>>>>>> bc7dde57b67c307c89db3788b9e072946f57f7a9
                         {{-- BOX: Profil Sekolah --}}
                         <div class="mb-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
                             <flux:sidebar.item 
@@ -170,7 +156,7 @@
                             </div>
                         @endif
 
-                        {{-- BOX: Laporan Belajar (Conditional) --}}
+                        {{-- BOX: Pelaporan Pengajar (Conditional) --}}
                         @if(auth()->check() && auth()->user()->role == 'Guru')
                             <div class="mb-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
                                 <flux:sidebar.item 
@@ -180,7 +166,7 @@
                                     wire:navigate
                                     class="liquid-click-effect !bg-transparent !border-0 !shadow-none !ring-0 text-[#E4DBC4]/80 hover:!text-[#F3EDE3] data-[current]:!text-[#F3EDE3] rounded-lg transition-all duration-300"
                                 >
-                                    {{__('Laporan Belajar')}}
+                                    {{__('Pelaporan Pengajar')}}
                                 </flux:sidebar.item>
                             </div>
                         @endif
