@@ -121,7 +121,7 @@
                             {{ __('Profil Sekolah') }}
                         </flux:sidebar.item>
 
-                        @if((auth()->check() && auth()->user()->role == 'siswa') || auth()->user()->role == 'Admin')
+                        @if(auth()->check() && auth()->user()->role == 'siswa')
                             <flux:sidebar.item 
                                 icon="building-office" 
                                 :href="route('bio_data.index')" 
