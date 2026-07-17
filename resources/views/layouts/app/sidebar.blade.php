@@ -166,7 +166,7 @@
                                     wire:navigate
                                     class="liquid-click-effect !bg-transparent !border-0 !shadow-none !ring-0 text-[#E4DBC4]/80 hover:!text-[#F3EDE3] data-[current]:!text-[#F3EDE3] rounded-lg transition-all duration-300"
                                 >
-                                    {{__('Pelaporan Pengajar')}}
+                                    {{__('Laporan ngajar')}}
                                 </flux:sidebar.item>
                             </div>
                         @endif
@@ -230,11 +230,6 @@
 
             </flux:sidebar>
 
-            {{-- 
-                =========================================
-                KONTEN AREA UTAMA (KANAN)
-                =========================================
-            --}}
             <div class="flex-1 flex flex-col min-w-0 relative z-10">
                 
                 <!-- Mobile User Header Menu -->

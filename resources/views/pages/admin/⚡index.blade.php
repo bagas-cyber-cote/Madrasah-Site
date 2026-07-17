@@ -58,7 +58,7 @@ new class extends Component
             <div class="relative z-10">
                 <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-4">
                     <flux:heading size="lg" class="!text-[#E4DBC4] !font-black tracking-wide">
-                        📁 Laporan Dari kelas {{ $kelas }}
+                        Laporan Dari kelas {{ $kelas }}
                     </flux:heading>
 
                     <livewire:pages::admin.delete :kelas="$kelas" :key="'delete-folder-' . $kelas" />
@@ -72,7 +72,7 @@ new class extends Component
                         <div class="rounded-2xl border border-white/20 bg-emerald-900/10 p-4 backdrop-blur-md shadow-[inset_0_1px_3px_rgba(255,255,255,0.15)]">
 
                             <flux:heading size="base" class="!text-[#E4DBC4]/90 !font-extrabold tracking-wide">
-                                📁 {{ $mapel }}
+                                {{ $mapel }}
                             </flux:heading>
 
                             <div class="mt-3 space-y-2">
