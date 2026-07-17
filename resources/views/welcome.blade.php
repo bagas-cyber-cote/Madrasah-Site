@@ -55,7 +55,6 @@
     </div>
 </nav>
 
-
 <!-- HERO SECTION -->
 <section id="beranda" class="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-[#18442A] via-[#1B3E2A] to-[#12271C]">
     <!-- Background Ambient Glow -->
@@ -133,9 +132,9 @@
                 <span class="text-xs font-bold uppercase tracking-widest text-[#E4DBC4]/70 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full w-max mb-6">
                     VISI UTAMA
                 </span>
-                <h3 class="text-3xl font-black text-[#F3EDE3] mb-6">Menjadi Pusat <span class="text-[#E4DBC4]">Pendidikan Islam</span> Unggul</h3>
+                <h3 class="text-3xl font-black text-[#F3EDE3] mb-6">Religius <span class="text-[#E4DBC4]">Cerdas</span> dan Kompetitif</h3>
                 <p class="text-[#E4DBC4]/85 leading-9 text-lg text-justify">
-                    Terwujudnya lembaga pendidikan yang unggul dalam melahirkan generasi bertakwa, berakhlak mulia, cerdas, terampil, dan berdaya saing global berlandaskan nilai-nilai Ahlussunnah wal Jama'ah.
+                    Misi Yayasan Pendidikan dan Sosial Hidayaturrahman NWDI Menggala adalah membentuk generasi **Religius** yang berakhlak mulia dan berfondasi spiritual kuat, **Cerdas** secara intelektual maupun emosional, serta **Kompetitif** dengan daya saing tinggi dan berjiwa tangguh untuk memberikan kemaslahatan sosial yang nyata bagi masyarakat.
                 </p>
             </div>
 
@@ -145,8 +144,8 @@
                 <div class="group relative rounded-[35px] border border-white/15 bg-white/5 backdrop-blur-3xl p-6 shadow-[0_20px_40px_rgba(0,0,0,.2)] transition duration-500 hover:bg-white/10 flex gap-6 items-start">
                     <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-[#45644A] font-black text-[#F3EDE3] text-lg shadow-md">1</div>
                     <div>
-                        <h4 class="text-xl font-bold text-[#F3EDE3] mb-2">Pendidikan Karakter & Spiritual</h4>
-                        <p class="text-[#E4DBC4]/80 leading-7 text-sm text-justify">Menyelenggarakan sistem pembelajaran terpadu yang mengintegrasikan nilai-nilai spiritual, moralitas keagamaan, dan akhlakul karimah ke dalam kehidupan sehari-hari.</p>
+                        <h4 class="text-xl font-bold text-[#F3EDE3] mb-2">Penguatan Nilai Keagamaan</h4>
+                        <p class="text-[#E4DBC4]/80 leading-7 text-sm text-justify">Menumbuhkan pemahaman dan pengalaman ajaran agama.</p>
                     </div>
                 </div>
 
@@ -154,8 +153,8 @@
                 <div class="group relative rounded-[35px] border border-white/15 bg-white/5 backdrop-blur-3xl p-6 shadow-[0_20px_40px_rgba(0,0,0,.2)] transition duration-500 hover:bg-white/10 flex gap-6 items-start">
                     <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-[#45644A] font-black text-[#F3EDE3] text-lg shadow-md">2</div>
                     <div>
-                        <h4 class="text-xl font-bold text-[#F3EDE3] mb-2">Transformasi Digital & Mutu Akademik</h4>
-                        <p class="text-[#E4DBC4]/80 leading-7 text-sm text-justify">Mengembangkan kurikulum akademik modern yang inovatif, adaptif, berbasis teknologi digital terkini demi melahirkan lulusan yang siap bersaing secara global.</p>
+                        <h4 class="text-xl font-bold text-[#F3EDE3] mb-2">Peningkatan Prestasi Akademik</h4>
+                        <p class="text-[#E4DBC4]/80 leading-7 text-sm text-justify">Mengintensifkan KBM dan bimbingan agar kecerdasan semangat berprestasi dan kompetisi santri dapat berjalan secara optimal.</p>
                     </div>
                 </div>
 
@@ -163,8 +162,17 @@
                 <div class="group relative rounded-[35px] border border-white/15 bg-white/5 backdrop-blur-3xl p-6 shadow-[0_20px_40px_rgba(0,0,0,.2)] transition duration-500 hover:bg-white/10 flex gap-6 items-start">
                     <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-[#45644A] font-black text-[#F3EDE3] text-lg shadow-md">3</div>
                     <div>
-                        <h4 class="text-xl font-bold text-[#F3EDE3] mb-2">Pengembangan Potensi & Bakat Santri</h4>
-                        <p class="text-[#E4DBC4]/80 leading-7 text-sm text-justify">Memfasilitasi pengembangan minat, bakat, dan potensi kepemimpinan santri melalui berbagai program ekstrakurikuler, keorganisasian, serta pelatihan kewirausahaan.</p>
+                        <h4 class="text-xl font-bold text-[#F3EDE3] mb-2">Pengembangan Kreativitas Islami</h4>
+                        <p class="text-[#E4DBC4]/80 leading-7 text-sm text-justify">Menumbuhkan kreatifitas dan seni Islami.</p>
+                    </div>
+                </div>
+
+                <!-- Misi 4 -->
+                <div class="group relative rounded-[35px] border border-white/15 bg-white/5 backdrop-blur-3xl p-6 shadow-[0_20px_40px_rgba(0,0,0,.2)] transition duration-500 hover:bg-white/10 flex gap-6 items-start">
+                    <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-[#45644A] font-black text-[#F3EDE3] text-lg shadow-md">4</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-[#F3EDE3] mb-2">Lingkungan Belajar Kondusif</h4>
+                        <p class="text-[#E4DBC4]/80 leading-7 text-sm text-justify">Menciptakan suasana belajar mengajar yang kondusif.</p>
                     </div>
                 </div>
             </div>
