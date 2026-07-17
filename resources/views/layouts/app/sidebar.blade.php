@@ -127,7 +127,7 @@
                         </div>
 
                         {{-- BOX: Bio Data Siswa (Conditional) --}}
-                        @if((auth()->check() && auth()->user()->role == 'siswa') || auth()->user()->role == 'Admin')
+                         @if(auth()->check() && auth()->user()->role == 'siswa')
                             <div class="mb-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
                                 <flux:sidebar.item 
                                     icon="building-office" 
@@ -184,7 +184,19 @@
                                     {{__('Kelola Laporan')}}
                                 </flux:sidebar.item>
                             </div>
-                        @endif
+                        
+                        <div class="mb-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
+                            <flux:sidebar.item 
+                                icon="home" 
+                                :href="route('pendaftaran.index')" 
+                                :current="request()->routeIs('pendaftaran.index')" 
+                                wire:navigate
+                                class="liquid-click-effect !bg-transparent !border-0 !shadow-none !ring-0 text-[#E4DBC4]/80 hover:!text-[#F3EDE3] data-[current]:!text-[#F3EDE3] rounded-lg transition-all duration-300"
+                            >
+                                {{ __('Kelola Pendaftaran') }}
+                            </flux:sidebar.item>
+                        </div>
+                         @endif
                     </flux:sidebar.group>
                 </flux:sidebar.nav>
 

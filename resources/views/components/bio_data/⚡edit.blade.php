@@ -5,13 +5,17 @@ use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Storage;
 use App\Models\bio_data;
 use App\Livewire\Forms\bio_dataForm;
+use Flux\Flux;
 
 new class extends Component
 {
     use WithFileUploads;
 
     public bio_dataForm $form;
+
     public $foto;
+    public $foto_kk;
+    public $sertifikat;
 
     public bio_data $bio_data;
 
@@ -19,12 +23,14 @@ new class extends Component
     {
         $this->bio_data = $bio_data;
         $this->form->setBioData($bio_data);
-        
     }
 
     public function update()
     {
         $this->form->foto = $this->foto;
+        $this->form->foto_kk = $this->foto_kk;
+        $this->form->sertifikat = $this->sertifikat;
+
         $this->form->update();
 
         Flux::modal('edit-bio-data')->close();
@@ -47,8 +53,12 @@ new class extends Component
             Storage::disk('public')->delete($path);
         }
 
-        $this->bio_data->forceFill(['foto' => null])->save();
+        $this->bio_data->forceFill([
+            'foto' => null
+        ])->save();
+
         $this->bio_data->refresh();
+
         $this->form->setBioData($this->bio_data);
 
         session()->flash('success', 'Foto profil berhasil dihapus.');
@@ -57,14 +67,17 @@ new class extends Component
 
 ?>
 
-<flux:modal name="edit-bio-data" class="md:w-96">
+<flux:modal name="edit-bio-data" class="md:w-3xl">
 
-    <form wire:submit.prevent="update" class="space-y-6" enctype="multipart/form-data">
+    <form wire:submit.prevent="update" class="space-y-5" enctype="multipart/form-data">
 
         <div>
-           <flux:heading class="text-center font-extrabold" size="xl">Ubah Bio Data Anda</flux:heading>
-            <flux:text class="mt-2 text-center">
-                Ubah Bio Data Anda.
+            <flux:heading size="lg">
+                Edit Data Pendaftaran
+            </flux:heading>
+
+            <flux:text class="mt-2">
+                Silakan perbarui data berikut.
             </flux:text>
         </div>
 
@@ -74,6 +87,7 @@ new class extends Component
                     src="{{ asset('storage/' . $bio_data->foto) }}"
                     class="w-24 h-24 rounded-full object-cover border"
                 >
+
                 <button
                     type="button"
                     wire:click="removePhoto"
@@ -84,32 +98,36 @@ new class extends Component
             </div>
         @endif
 
-        <div>
-            <label class="block text-sm font-medium mb-2">
-                Foto Profil
-            </label>
-
-            <input
-                type="file"
-                wire:model="foto"
-                accept=".jpg,.jpeg,.png"
-                class="block w-full border rounded-lg p-2"
-            >
-
-            @error('foto')
-                <span class="text-red-500 text-sm">
-                    {{ $message }}
-                </span>
-            @enderror
-        </div>
+        <flux:input
+            type="file"
+            label="Foto Profil"
+            wire:model="foto"
+        />
 
         <flux:input
-            label="Nama"
+            label="Nama Lengkap"
             wire:model="form.nama"
         />
+
         <flux:input
-            label="Tanggal Lahir"
+            type="email"
+            label="Email"
+            wire:model="form.email"
+        />
+
+        <flux:input
+            label="NISN"
+            wire:model="form.nisn"
+        />
+
+        <flux:input
+            label="NIK"
+            wire:model="form.nik"
+        />
+
+        <flux:input
             type="date"
+            label="Tanggal Lahir"
             wire:model="form.tanggal_lahir"
         />
 
@@ -132,13 +150,52 @@ new class extends Component
             wire:model="form.asal_sekolah"
         />
 
+        <flux:input
+            label="Nama Ayah"
+            wire:model="form.nama_ayah"
+        />
+
+        <flux:input
+            label="Nama Ibu"
+            wire:model="form.nama_ibu"
+        />
+
+        <flux:input
+            label="No HP"
+            wire:model="form.no_hp"
+        />
+
+        <flux:select
+            label="Tahun Ajaran"
+            wire:model="form.tahun_ajaran"
+        >
+            <option value="">Pilih Tahun Ajaran</option>
+            <option value="2026/2027">2026/2027</option>
+            <option value="2027/2028">2027/2028</option>
+            <option value="2028/2029">2028/2029</option>
+        </flux:select>
+
+        <flux:input
+            type="file"
+            label="Foto Kartu Keluarga"
+            wire:model="foto_kk"
+        />
+
+        <flux:input
+            type="file"
+            label="Sertifikat (Opsional)"
+            wire:model="sertifikat"
+        />
+
         <div class="flex">
             <flux:spacer />
 
-            <flux:button type="submit" variant="primary">
+            <flux:button
+                type="submit"
+                variant="primary"
+            >
                 Simpan Perubahan
             </flux:button>
-
         </div>
 
     </form>
