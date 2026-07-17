@@ -111,9 +111,8 @@
                             >
                                 {{ __('Dashboard') }}
                             </flux:sidebar.item>
-                        </div>
+                    
 
-<<<<<<< HEAD
                         <flux:sidebar.item 
                             icon="building-office" 
                             :href="route('profil-sekolah.index')" 
@@ -124,7 +123,6 @@
                             {{ __('Profil Sekolah') }}
                         </flux:sidebar.item>
 
-                        @if(auth()->check() && auth()->user()->role == 'siswa')
 
                         {{-- BOX: Profil Sekolah --}}
                         <div class="mb-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
