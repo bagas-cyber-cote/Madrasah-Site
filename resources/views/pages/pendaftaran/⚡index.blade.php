@@ -81,7 +81,7 @@ new class extends Component
 
                 <h2 class="mt-4 text-xl font-bold text-white">
 
-                    {{ $tahun->tahun_ajaran }}
+                    Tahun Ajaran {{ $tahun->tahun_ajaran }}
 
                 </h2>
 
@@ -124,7 +124,7 @@ new class extends Component
 
             <h2 class="text-2xl font-black">
 
-                📁 {{ $tahun->tahun_ajaran }}
+                📁{{ $tahun->tahun_ajaran }}
 
             </h2>
 

@@ -23,6 +23,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
 ->name('kelola_laporan.index');
     Route::livewire('pendaftaran', 'pages::pendaftaran.index')
 ->name('pendaftaran.index');
+    Route::livewire('siswa', 'pages::siswa.index')
+->name('siswa.index');
+    Route::livewire('absensi', 'pages::absensi.index')
+->name('absensi.index');
 });
 
 
