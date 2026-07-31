@@ -213,7 +213,7 @@
                 <div class="flex items-center gap-3 text-xs text-[#E4DBC4]/60 mb-3">
                     <span>📅 14 Juli 2026</span>
                     <span>•</span>
-                    <span>✍️ Admin</span>
+                    <span>✍️ Guru Madrasah</span>
                 </div>
                 <h3 class="text-xl font-bold text-[#F3EDE3] mb-4 line-clamp-2 group-hover:text-[#E4DBC4] transition duration-300">Penerimaan Santri Baru Tahun Ajaran Baru Resmi Dibuka</h3>
                 <p class="text-[#E4DBC4]/80 leading-7 text-sm text-justify line-clamp-3 mb-6">YPSH NWDI Menggala kembali membuka pendaftaran santri baru dengan kurikulum terintegrasi dan sistem digitalisasi penuh...</p>
