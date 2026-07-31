@@ -164,9 +164,9 @@ new class extends Component
                     {{ $bio?->asal_sekolah ?? '' }}
                 </div>
                 <div>
-                 <flux:heading size="sm" class="text-white/70 mb-1">Email</flux:heading>
+                    <flux:heading size="sm" class="text-white/70 mb-1">Email</flux:heading>
                 <div class="border border-white/5 rounded-lg p-3 bg-black/20 text-white/90">
-                     {{ $bio->email ?? '-' }}
+                    {{ $bio->email ?? '-' }}
                 </div>
             </div>
 
