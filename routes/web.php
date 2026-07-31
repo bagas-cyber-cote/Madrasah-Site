@@ -27,6 +27,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
 ->name('siswa.index');
     Route::livewire('absensi', 'pages::absensi.index')
 ->name('absensi.index');
+    Route::livewire('pembuatan_jadwal', 'pages::pembuatan_jadwal.index')
+->name('pembuatan_jadwal.index');
+ Route::livewire('Jadwal', 'pages::Jadwal.index')
+->name('Jadwal.index');
 });
 
 

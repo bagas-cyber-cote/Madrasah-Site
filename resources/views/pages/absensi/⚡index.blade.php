@@ -16,7 +16,7 @@ new class extends Component
         }
 
 
-        if (Auth::user()->role !== 'Admin') {
+        if (Auth::user()->role !== 'Admin' && Auth::user()->role !== 'Guru') {
             abort(403, 'Halaman ini hanya dapat diakses oleh Guru.');
         }
     }

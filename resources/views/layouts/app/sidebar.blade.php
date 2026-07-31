@@ -171,7 +171,6 @@
                             </div>
                         @endif
 
-                        {{-- BOX: Kelola Laporan (Conditional) --}}
                         @if(auth()->check() && auth()->user()->role == 'Admin')
                             <div class="mb-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
                                 <flux:sidebar.item 
@@ -196,9 +195,6 @@
                                 {{ __('Kelola Pendaftar') }}
                             </flux:sidebar.item>
                         </div>
-<<<<<<< HEAD
-                         @endif
-
                          
                         <div class="mb-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
                             <flux:sidebar.item 
@@ -210,7 +206,9 @@
                             >
                                 {{ __('data siswa') }}
                             </flux:sidebar.item>
-
+                        </div>
+                    @endif
+                        @if(auth()->check() && (auth()->user()->role == 'Admin' || auth()->user()->role == 'Guru'))   
                             <div class="mb-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
                             <flux:sidebar.item 
                                 icon="home" 
@@ -221,9 +219,38 @@
                             >
                                 {{ __('absensi') }}
                             </flux:sidebar.item>
-=======
+                        </div>
                         @endif
->>>>>>> 167fb173a4c2620b4fe0f8e3f139724b6b542c30
+
+                        @if(auth()->check() && auth()->user()->role == 'Admin')
+                            <div class="mb-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
+                            <flux:sidebar.item 
+                                icon="home" 
+                                :href="route('pembuatan_jadwal.index')" 
+                                :current="request()->routeIs('pembuatan_jadwal.index')" 
+                                wire:navigate
+                                class="liquid-click-effect !bg-transparent !border-0 !shadow-none !ring-0 text-[#E4DBC4]/80 hover:!text-[#F3EDE3] data-[current]:!text-[#F3EDE3] rounded-lg transition-all duration-300"
+                            >
+                                {{ __('Pembuatan Jadwal') }}
+                            </flux:sidebar.item>
+                        </div>
+                        @endif
+                    
+                    @if(auth()->check() && (auth()->user()->role == 'Admin' || auth()->user()->role == 'Guru'))
+                        <div class="mb-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-1 transition duration-300 hover:scale-[1.02] hover:bg-white/10 hover:border-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
+                            <flux:sidebar.item 
+                                icon="home" 
+                                :href="route('Jadwal.index')" 
+                                :current="request()->routeIs('Jadwal.index')" 
+                                wire:navigate
+                                class="liquid-click-effect !bg-transparent !border-0 !shadow-none !ring-0 text-[#E4DBC4]/80 hover:!text-[#F3EDE3] data-[current]:!text-[#F3EDE3] rounded-lg transition-all duration-300"
+                            >
+                                {{ __('Jadwal') }}
+                            </flux:sidebar.item>
+                        </div>
+                    @endif
+
+
                     </flux:sidebar.group>
                 </flux:sidebar.nav>
 
