@@ -8,9 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 new class extends Component
 {
-
     public $kelasTerpilih = null;
-
 
     public function mount()
     {
@@ -23,13 +21,11 @@ new class extends Component
         }
     }
 
-
     #[On('siswa-created')]
     public function refresh()
     {
         unset($this->siswa);
     }
-
 
     #[Computed]
     public function siswa()
@@ -39,26 +35,48 @@ new class extends Component
             ->groupBy('kelas_id');
     }
 
-
     public function bukaKelas($kelasId)
     {
         $this->kelasTerpilih = $kelasId;
     }
-
 
     public function tutupKelas()
     {
         $this->kelasTerpilih = null;
     }
 
+    // Hapus satu siswa
+    public function delete($id)
+    {
+        Siswa::findOrFail($id)->delete();
 
+        unset($this->siswa);
+
+        session()->flash('success', 'Data siswa berhasil dihapus.');
+    }
+
+    // Hapus semua siswa dalam satu kelas
+    public function deleteFolder($kelasId)
+    {
+        Siswa::where('kelas_id', $kelasId)->delete();
+
+        unset($this->siswa);
+
+        $this->kelasTerpilih = null;
+
+        session()->flash('success', 'Semua siswa pada kelas berhasil dihapus.');
+    }
 };
 
 ?>
 
-
 <div class="space-y-6">
 
+    @if(session('success'))
+        <div class="rounded-lg bg-green-100 p-3 text-green-700">
+            {{ session('success') }}
+        </div>
+    @endif
 
     <div class="flex justify-between items-center">
 
@@ -66,86 +84,91 @@ new class extends Component
             Data Siswa
         </flux:heading>
 
-
         <flux:modal.trigger name="add-siswa">
-
             <flux:button variant="primary">
                 Tambah Siswa
             </flux:button>
-
         </flux:modal.trigger>
 
     </div>
 
-
     <livewire:siswa.crate />
-
-
-    {{-- Folder kelas --}}
 
     @if(!$kelasTerpilih)
 
-
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-
 
             @foreach($this->siswa as $kelasId => $dataSiswa)
 
+                <div class="relative rounded-lg border bg-white p-4 hover:shadow-md transition">
 
-                <button
-                    wire:click="bukaKelas({{ $kelasId }})"
-                    class="rounded-lg border bg-white p-4 hover:shadow-md transition"
-                >
+                    {{-- Tombol titik tiga --}}
+                    <div class="absolute top-2 right-2">
 
-                    <div class="flex flex-col items-center">
+                        <details>
 
-                        <div class="text-5xl">
-                            📁
-                        </div>
+                            <summary class="cursor-pointer list-none text-xl font-bold">
+                                ⋮
+                            </summary>
 
+                            <div class="absolute right-0 mt-2 w-32 rounded-lg border bg-white shadow-lg z-50">
 
-                        <div class="mt-2 font-semibold">
-                            {{ $dataSiswa->first()->kelas->nama_kelas }}
-                        </div>
+                                <button
+                                    wire:click="deleteFolder({{ $kelasId }})"
+                                    wire:confirm="Yakin ingin menghapus semua siswa pada kelas ini?"
+                                    class="w-full px-3 py-2 text-left text-red-600 hover:bg-red-50"
+                                >
+                                    🗑 Hapus
+                                </button>
 
+                            </div>
 
-                        <div class="text-sm text-gray-500">
-                            {{ $dataSiswa->count() }} Siswa
-                        </div>
+                        </details>
 
                     </div>
 
-                </button>
+                    <button
+                        wire:click="bukaKelas({{ $kelasId }})"
+                        class="w-full"
+                    >
 
+                        <div class="flex flex-col items-center">
+
+                            <div class="text-5xl">
+                                📁
+                            </div>
+
+                            <div class="mt-2 font-semibold">
+                                {{ $dataSiswa->first()->kelas->nama_kelas }}
+                            </div>
+
+                            <div class="text-sm text-gray-500">
+                                {{ $dataSiswa->count() }} Siswa
+                            </div>
+
+                        </div>
+
+                    </button>
+
+                </div>
 
             @endforeach
 
-
         </div>
 
-
     @else
-
-
-        {{-- Isi folder kelas --}}
 
         @php
             $siswaKelas = $this->siswa[$kelasTerpilih];
         @endphp
 
-
         <div class="rounded-xl border bg-white p-5">
-
 
             <div class="flex justify-between items-center mb-4">
 
-
                 <flux:heading size="lg">
-
                     📁 {{ $siswaKelas->first()->kelas->nama_kelas }}
-
                 </flux:heading>
-
 
                 <flux:button
                     wire:click="tutupKelas"
@@ -154,43 +177,43 @@ new class extends Component
                     Kembali
                 </flux:button>
 
-
             </div>
 
-
-
-            <div class="space-y-2">
-
+            <div class="space-y-3">
 
                 @foreach($siswaKelas as $index => $item)
 
+                    <div class="flex justify-between items-center rounded-lg border p-3">
 
-                    <div class="flex items-center gap-3 rounded-lg border p-3">
+                        <div class="flex items-center gap-3">
 
+                            <div class="font-semibold">
+                                {{ $index + 1 }}.
+                            </div>
 
-                        <div class="font-semibold">
-                            {{ $index + 1 }}.
+                            <div>
+                                {{ $item->nama_siswa }}
+                            </div>
+
                         </div>
 
-
-                        <div>
-                            {{ $item->nama_siswa }}
-                        </div>
-
+                        <flux:button
+                            variant="danger"
+                            size="sm"
+                            wire:click="delete({{ $item->id }})"
+                            wire:confirm="Yakin ingin menghapus siswa ini?"
+                        >
+                            Hapus
+                        </flux:button>
 
                     </div>
 
-
                 @endforeach
-
 
             </div>
 
-
         </div>
 
-
     @endif
-
 
 </div>
