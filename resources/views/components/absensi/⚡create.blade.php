@@ -30,57 +30,29 @@ new class extends Component
             ->get();
     }
 
-
-
-
     public function save()
     {
 
         $absensi = $this->form->store(Auth::id());
 
-
-
         foreach ($this->statusSiswa as $siswaId => $status) {
-
-
             DetailAbsensi::create([
-
                 'absensi_id' => $absensi->id,
-
                 'siswa_id' => $siswaId,
-
                 'status' => $status,
-
             ]);
-
         }
-
-
-
         session()->flash(
             'success',
             'Absensi berhasil dibuat.'
         );
-
-
-
         $this->dispatch('absensi-created');
-
-
-
         Flux::modal('create-absensi')->close();
-
     }
-
-
-
-
     public function with(): array
     {
         return [
-
             'kelas' => Kelas::orderBy('nama_kelas')->get(),
-
         ];
     }
 
@@ -191,7 +163,7 @@ new class extends Component
             @empty
 
 
-                <div class="rounded-lg border p-3 text-gray-500">
+                <div class="rounded-lg border p-3 text-emerald-600">
 
                     Pilih kelas terlebih dahulu.
 

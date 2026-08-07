@@ -23,11 +23,11 @@ new class extends Component
         Jadwal Pengajar
     </flux:heading>
 
-    <table class="w-full border border-gray-300">
+    <table class="w-full border border-emerald-800">
 
         <thead>
 
-            <tr class="bg-gray-100">
+            <tr class="bg-emerald-300">
 
                 <th class="border px-4 py-2">No</th>
                 <th class="border px-4 py-2">Kelas</th>
