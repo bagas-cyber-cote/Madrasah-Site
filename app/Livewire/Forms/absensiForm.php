@@ -7,7 +7,6 @@ use App\Models\Absensi;
 
 class absensiForm extends Form
 {
-
     public $kelas_id = '';
 
     public string $mata_pelajaran = '';
@@ -18,6 +17,7 @@ class absensiForm extends Form
 
     public string $tanggal = '';
 
+    public ?Absensi $absensi = null;
 
 
     public function rules(): array
@@ -29,13 +29,11 @@ class absensiForm extends Form
                 'exists:kelas,id',
             ],
 
-
             'mata_pelajaran' => [
                 'required',
                 'string',
                 'max:255',
             ],
-
 
             'jam_pelajaran' => [
                 'required',
@@ -43,12 +41,10 @@ class absensiForm extends Form
                 'max:255',
             ],
 
-
             'materi' => [
                 'required',
                 'string',
             ],
-
 
             'tanggal' => [
                 'required',
@@ -59,14 +55,23 @@ class absensiForm extends Form
     }
 
 
+    public function setAbsensi(Absensi $absensi): void
+    {
+        $this->absensi = $absensi;
+
+        $this->kelas_id = $absensi->kelas_id;
+        $this->mata_pelajaran = $absensi->mata_pelajaran;
+        $this->jam_pelajaran = $absensi->jam_pelajaran;
+        $this->materi = $absensi->materi;
+        $this->tanggal = $absensi->tanggal;
+    }
 
 
     public function store($userId)
     {
         $this->validate();
 
-
-        $absensi = Absensi::create([
+        return Absensi::create([
 
             'user_id' => $userId,
 
@@ -81,10 +86,26 @@ class absensiForm extends Form
             'tanggal' => $this->tanggal,
 
         ]);
-
-
-        return $absensi;
     }
 
+
+    public function update(): void
+    {
+        $this->validate();
+
+        $this->absensi->update([
+
+            'kelas_id' => $this->kelas_id,
+
+            'mata_pelajaran' => $this->mata_pelajaran,
+
+            'jam_pelajaran' => $this->jam_pelajaran,
+
+            'materi' => $this->materi,
+
+            'tanggal' => $this->tanggal,
+
+        ]);
+    }
 
 }
